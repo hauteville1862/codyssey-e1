@@ -1,10 +1,11 @@
 # 01 터미널 기본명령어 
-#### 1-1. 파일의 현재 위치
+### 1-1. 파일의 현재 위치
+`pwd`: 현재 내가 작업 중인 폴더(디렉토리)의 전체 경로를 보기
 ```bash
 % pwd
 /Users/hauteville18620603/Desktop/codyssey-e1
 ```
-#### 1-2. 파일 생성
+### 1-2. 파일 생성
 ```bash
 % touch file
 % ls -al file
