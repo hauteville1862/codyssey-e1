@@ -18,7 +18,7 @@
 drwxr-xr-x  2 hauteville18620603  hauteville18620603  64  8  8 13:26 folder
 ```
 #### 1-4. 파일 & 폴더 이동
-![스크린샷](./screenshots/file_folder_move.png)
+![스크린샷](screenshots/file_folder_move.png)
 
 
 ### 파일 & 폴더 삭제
