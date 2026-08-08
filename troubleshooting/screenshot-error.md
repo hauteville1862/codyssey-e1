@@ -2,7 +2,9 @@
 
 ### 문제
 스크린샷 파일을 만들고 이미지를 docs 내 문서에 첨부했을 때, 아래와 같이 이미지가 보이지 않는 오류가 발생함.
-
+```bash
+![스크린샷](screenshots/파일&폴더_이동.png)
+```
 ![스크린샷](../screenshots/screenshot-error1.png)
 
 ### 가설
