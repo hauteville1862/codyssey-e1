@@ -6,6 +6,10 @@
 /Users/hauteville18620603/Desktop/codyssey-e1
 ```
 ### 1-2. 파일 생성
+`touch`: 
+<br>
+`ls`: 
+
 ```bash
 % touch file
 % ls -al file
