@@ -17,25 +17,53 @@
 -rw-r--r--  1 hauteville18620603  hauteville18620603  0  8  8 13:26 file
 ```
 
-#### 1-3. 폴더 생성
+### 1-3. 폴더 생성
+`mkdir`: 새로운 디렉토리(폴더)를 생성하는 명령어
+
+`ls -ald`: 디렉토리 자체의 정보만 `-d` 상세 정보와 함께 `-l` 출력하는 명령어
 ```bash
 % mkdir folder
 % ls -ald folder
 drwxr-xr-x  2 hauteville18620603  hauteville18620603  64  8  8 13:26 folder
 ```
-#### 1-4. 파일 & 폴더 이동
+
+### 1-4. 디렉토리 이동
+`cd 경로`: 현재 작업 중인 디렉토리를 지정한 경로로 이동(변경)하는 명령어
+
+`cd ..`: 한 단계 상위 디렉토리로 이동하는 명령어
+```bash
+(여기에 cd 실행 결과를 붙여넣어 주세요)
+```
+
+### 1-5. 파일 & 폴더 이동 / 이름 변경
+`mv`: 파일이나 폴더를 다른 위치로 이동시키거나, 같은 위치에서 이름을 변경하는 명령어
+```bash
+(여기에 mv 실행 결과를 붙여넣어 주세요)
+```
 ![스크린샷](../screenshots/file_folder_move.png)
 
+### 1-6. 파일 & 폴더 복사
+`cp`: 파일을 복사하는 명령어
 
-### 파일 & 폴더 삭제
+`cp -r`: 폴더(디렉토리)를 하위 내용까지 재귀적으로 `-r` 복사하는 명령어
 ```bash
-% rm 파일
+(여기에 cp 실행 결과를 붙여넣어 주세요)
+```
+
+### 1-7. 파일 & 폴더 삭제
+`rm`: 파일을 삭제하는 명령어
+
+`rm -r`: 폴더(디렉토리)와 그 안의 내용을 모두 삭제하는 명령어
+
+`rmdir`: 비어 있는 폴더만 삭제하는 명령어
+```bash
+% rm file
 % ls -al
 total 0
 drwxr-xr-x  2 hauteville18620603  hauteville18620603   64  8  2 16:14 .
 drwxr-xr-x  5 hauteville18620603  hauteville18620603  160  8  2 16:11 ..
 
-% rm -r 폴더
+% rm -r folder
 % ls -al
 total 8
 drwxr-xr-x   4 hauteville18620603  hauteville18620603  128  8  2 16:18 .
@@ -44,3 +72,4 @@ drwxr-xr-x  12 hauteville18620603  hauteville18620603  384  8  2 16:02 .git
 -rw-r--r--   1 hauteville18620603  hauteville18620603  640  8  2 16:02 README.md
 ```
 
+(여기에 rmdir 실행 결과를 붙여넣어 주세요)
