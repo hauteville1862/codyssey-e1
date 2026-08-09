@@ -47,7 +47,15 @@ drwxr-xr-x  2 hauteville18620603  hauteville18620603  64  8  8 13:26 folder
 
 `cp -r`: 폴더(디렉토리)를 하위 내용까지 재귀적으로 `-r` 복사하는 명령어
 ```bash
-(여기에 cp 실행 결과를 붙여넣어 주세요)
+$ cp file file_copy
+$ ls -al file file_copy
+-rw-r--r-- 1 Yuhyun Lim 197121 0 Aug  9 22:12 file
+-rw-r--r-- 1 Yuhyun Lim 197121 0 Aug  9 22:12 file_copy
+
+$ cp -r folder folder_copy
+$ ls -ald folder folder_copy
+drwxr-xr-x 1 Yuhyun Lim 197121 0 Aug  9 22:12 folder
+drwxr-xr-x 1 Yuhyun Lim 197121 0 Aug  9 22:12 folder_copy
 ```
 
 ### 1-7. 파일 & 폴더 삭제
