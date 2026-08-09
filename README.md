@@ -12,12 +12,12 @@
 
 | 항목 | 값 |
 | --- | --- |
-| OS | [진행 중] |
-| Shell/터미널 | [진행 중] |
-| Docker | [진행 중] |
-| Git | [진행 중] |
+| OS | Windows 11 (MINGW64_NT-10.0-26200) |
+| Shell/터미널 | Git Bash (bash.exe / MSYS) |
+| Docker | 29.6.2 |
+| Git | 2.55.0.windows.3 |
 
-> 서울캠퍼스 환경에서는 sudo 권한 제약으로 Docker Desktop 대신 [OrbStack](https://orbstack.dev/)을 사용합니다. OrbStack 실행 시 내부적으로 Docker 엔진이 함께 구동되며, 터미널에서는 기존과 동일하게 `docker` 명령어를 사용할 수 있습니다.
+> Docker Desktop이 설치되어 있으며(`docker context ls` 기준 `desktop-linux` 컨텍스트), 터미널에서 `docker` 명령어를 바로 사용할 수 있습니다.
 
 ## 3. 수행 항목
 
