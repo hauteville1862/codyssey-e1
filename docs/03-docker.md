@@ -164,10 +164,10 @@ docker.io/library/nginx:latest
 `docker images`: 로컬에 저장된 이미지 목록을 출력하는 명령어
 ```bash
 $ docker images
+                                                                      i Info →   U  In Use
 IMAGE                ID             DISK USAGE   CONTENT SIZE   EXTRA
-hello-world:latest   7f4da0fc94bc       25.9kB         9.49kB   U    
-nginx:latest         8541484afbc9        241MB           66MB   U    
-ubuntu:latest        678c6550cc43        160MB         45.3MB   U
+hello-world:latest   7f4da0fc94bc       25.9kB         9.49kB        
+ubuntu:latest        678c6550cc43        160MB         45.3MB
 ```
 
 ### 3-5. 컨테이너 실행/중지 및 목록 확인
@@ -199,24 +199,16 @@ For more examples and ideas, visit:
 ```
 - ubuntu
 ```bash
-(여기에 docker run ubuntu 실행 결과를 붙여넣어 주세요)
-```
-- nginx
-```bash
-$ docker run -d --name test-nginx nginx
-aa80ff79035c978c8d0ee376f0eb19ddb54cb2b88b739655fb426e6db385a3af
+$ docker run ubuntu
 ```
 
 `docker ps`: 현재 실행 중인 컨테이너 목록을 출력하는 명령어
 ```bash
 $ docker ps
-CONTAINER ID   IMAGE     COMMAND                   CREATED         STATUS         PORTS     NAMES
-aa80ff79035c   nginx     "/docker-entrypoint.…"   9 seconds ago   Up 7 seconds   80/tcp    test-nginx
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ```
 > hello-world 이미지는 메시지 한 줄을 출력하고 바로 종료되는 프로그램
 > 실행 직후 `docker ps`를 확인하면 컨테이너가 이미 종료되어 빈 목록이 나오는 것이 정상
-> ubuntu 이미지도 기본 명령(bash)만으로는 입력을 기다릴 터미널이 없어 바로 종료됨. `-it` 옵션으로 인터랙티브 실행하거나 `sleep` 같이 계속 실행되는 명령을 줘야 `docker ps`에 나타남
-> nginx는 기본 CMD(`nginx -g "daemon off;"`)가 포그라운드에서 계속 대기하는 서버 프로세스라 별다른 옵션 없이도 `docker ps`에 실행 중 상태로 표시됨
 
 `docker stop 컨테이너`: 실행 중인 컨테이너를 중지하는 명령어
 ```bash
