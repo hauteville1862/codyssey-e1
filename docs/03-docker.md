@@ -163,13 +163,28 @@ ubuntu:latest        678c6550cc43        160MB         45.3MB
 ```
 
 ### 3-5. 컨테이너 실행/중지 및 목록 확인
-`docker ps`: 현재 실행 중인 컨테이너 목록을 출력하는 명령어
-- `docker ps -a`: 중지된 컨테이너까지 포함한 전체 컨테이너 목록을 출력하는 명령어
-- `docker stop 컨테이너`: 실행 중인 컨테이너를 중지하는 명령어
+`docker run -d --name 이름 이미지 명령`: 이미지를 컨테이너로 실행하는 명령어(`-d`는 백그라운드 실행)
 ```bash
-(여기에 docker ps, docker ps -a, docker stop 실행 결과를 붙여넣어 주세요)
+$ docker run -d --name test-ubuntu ubuntu sleep 300
+7504a2caee67ab4afa182c0cd8b03e197d9e33e75b163a633b5262f0f63b05b9
 ```
-> hello-world/ubuntu 컨테이너 실행 실습은 [06-list.md](06-list.md)에서 별도로 다룸
+`docker ps`: 현재 실행 중인 컨테이너 목록을 출력하는 명령어
+```bash
+$ docker ps
+CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS         PORTS     NAMES
+7504a2caee67   ubuntu    "sleep 300"   7 seconds ago   Up 6 seconds             test-ubuntu
+```
+`docker stop 컨테이너`: 실행 중인 컨테이너를 중지하는 명령어
+```bash
+$ docker stop test-ubuntu
+test-ubuntu
+```
+`docker ps -a`: 중지된 컨테이너까지 포함한 전체 컨테이너 목록을 출력하는 명령어
+```bash
+$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS                       PORTS     NAMES
+7504a2caee67   ubuntu    "sleep 300"   29 seconds ago   Exited (137) 4 seconds ago             test-ubuntu
+```
 
 ### 3-6. 컨테이너 로그 확인
 `docker logs 컨테이너`: 컨테이너의 표준 출력·에러 로그를 확인하는 명령어
