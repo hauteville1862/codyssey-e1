@@ -8,7 +8,26 @@
 - **수행 흐름**: 터미널로 작업 디렉토리·권한 정리 → Docker 설치 및 점검 → 기존 Dockerfile 기반 커스텀 이미지 제작 → 포트 매핑으로 접속 확인 → 바인드 마운트/볼륨으로 "변경 반영"과 "데이터 영속성" 검증 → Git 설정 및 GitHub/VSCode 연동
 - **평가 관점**(`평가기준.md` 기준): 기능 동작 검증, 동작 구조 설계, 핵심 기술 원리 적용, 심층 인터뷰의 4개 항목으로 PASS/FAIL 평가
 
-## 2. 실행 환경
+## 2. 디렉토리 구조
+
+```
+codyssey-e1/
+├── README.md              # 프로젝트 개요·진행 상황 요약
+├── codyssey/               # 미션 원본 지시문, 평가 기준 문서
+│   ├── 미션.md
+│   └── 평가기준.md
+├── docs/                   # 항목별(01~09) 수행 로그 및 검증 결과
+│   ├── 01-terminal.md
+│   ├── 02-permission.md
+│   └── ...
+├── screenshots/            # 문서에서 참조하는 캡처 이미지
+└── troubleshooting/         # 진행 중 발생한 문제와 해결 과정 기록
+    └── screenshot-error.md
+```
+
+- **구성 기준**: 미션 지시문/평가 기준(`codyssey/`)과 실제 수행 기록(`docs/`)을 분리하고, 항목 번호(01~09)를 파일명 접두사로 맞춰 README 체크리스트와 1:1로 대응시켰습니다. 스크린샷은 `screenshots/`에 모아 문서에서 상대 경로로 참조하고, 문제 해결 과정은 `troubleshooting/`에 별도로 기록합니다.
+
+## 3. 실행 환경
 
 | 항목 | 값 |
 | --- | --- |
@@ -19,7 +38,7 @@
 
 > Docker Desktop이 설치되어 있으며(`docker context ls` 기준 `desktop-linux` 컨텍스트), 터미널에서 `docker` 명령어를 바로 사용할 수 있습니다.
 
-## 3. 수행 항목
+## 4. 수행 항목
 
 미션 요구사항(터미널/권한/Docker/Dockerfile/포트/마운트·볼륨/Git·GitHub) 기준 체크리스트이며, 각 항목의 상세 수행 로그와 검증 결과는 문서 링크에서 확인할 수 있습니다.
 
@@ -35,7 +54,7 @@
 | 08 | ⬜ | 바인드 마운트 반영 + Docker 볼륨 영속성 증거 | [docs/08-volume.md](docs/08-volume.md) |
 | 09 | ⬜ | Git 사용자 정보·기본 브랜치 설정 및 GitHub/VSCode 연동 | [docs/09-git-github.md](docs/09-git-github.md) |
 
-## 4. 트러블슈팅
+## 5. 트러블슈팅
 
 - [문제 1 - 스크린샷을 첨부했을 때 이미지가 제대로 보이지 않음](troubleshooting/screenshot-error.md)
 - 문제 2 - [진행 중]
