@@ -164,14 +164,51 @@ ubuntu:latest        678c6550cc43        160MB         45.3MB
 
 ### 3-5. 컨테이너 실행/중지 및 목록 확인
 `docker run -d --name 이름 이미지 명령`: 이미지를 컨테이너로 실행하는 명령어(`-d`는 백그라운드 실행)
+- hello-world
 ```bash
-(여기에 docker run, docker ps, docker stop, docker ps -a 실행 결과를 붙여넣어 주세요)
+$ docker run hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
 ```
+- ubuntu
+```bash
+(여기에 docker run ubuntu 실행 결과를 붙여넣어 주세요)
+```
+- nginx
+```bash
+$ docker run -d --name test-nginx nginx
+aa80ff79035c978c8d0ee376f0eb19ddb54cb2b88b739655fb426e6db385a3af
+```
+
 `docker ps`: 현재 실행 중인 컨테이너 목록을 출력하는 명령어
 ```bash
-(여기에 docker run, docker ps, docker stop, docker ps -a 실행 결과를 붙여넣어 주세요)
+$ docker ps
+CONTAINER ID   IMAGE     COMMAND                   CREATED         STATUS         PORTS     NAMES
+aa80ff79035c   nginx     "/docker-entrypoint.…"   9 seconds ago   Up 7 seconds   80/tcp    test-nginx
 ```
-> hello-world 이미지는 메시지 한 줄을 출력하고 바로 종료되는 프로그램이라, 실행 직후 `docker ps`를 확인하면 컨테이너가 이미 종료되어 빈 목록이 나오는 것이 정상임(실행 중인 컨테이너만 보여주는 `docker ps`의 특성). 종료된 컨테이너까지 보려면 `docker ps -a` 필요
+> hello-world 이미지는 메시지 한 줄을 출력하고 바로 종료되는 프로그램
+> 실행 직후 `docker ps`를 확인하면 컨테이너가 이미 종료되어 빈 목록이 나오는 것이 정상
+> ubuntu 이미지도 기본 명령(bash)만으로는 입력을 기다릴 터미널이 없어 바로 종료됨. `-it` 옵션으로 인터랙티브 실행하거나 `sleep` 같이 계속 실행되는 명령을 줘야 `docker ps`에 나타남
+> nginx는 기본 CMD(`nginx -g "daemon off;"`)가 포그라운드에서 계속 대기하는 서버 프로세스라 별다른 옵션 없이도 `docker ps`에 실행 중 상태로 표시됨
 
 `docker stop 컨테이너`: 실행 중인 컨테이너를 중지하는 명령어
 ```bash
