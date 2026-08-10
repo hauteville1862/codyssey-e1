@@ -37,6 +37,7 @@ $ mkdir folder
 $ ls -ld folder
 drwxr-xr-x 1 Yuhyun Lim 197121 0 Aug 10 12:59 folder
 ```
+
 `d`(디렉토리) + `rwx`(소유자) + `r-x`(그룹) + `r-x`(기타) → `755`
 
 ### 2-2. 파일 실행 권한 변경
