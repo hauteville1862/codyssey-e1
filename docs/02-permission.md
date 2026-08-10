@@ -43,16 +43,20 @@ drwxr-xr-x 1 Yuhyun Lim 197121 0 Aug 10 12:59 folder
 `chmod 권한 파일`: 파일의 권한을 숫자(8진수) 또는 기호(`u`/`g`/`o` + `rwx`)로 변경하는 명령어
 - 파일에서 `x`(실행 권한)가 없으면 `./파일명`으로 직접 실행할 수 없고, `x`를 추가하면 실행 가능한 상태로 바뀜 (예: 644 → 755)
 ```bash
-$ chmod 644 folder/test.sh
-$ ls -l folder/test.sh
--rw-r--r-- 1 Yuhyun Lim 197121 44 Aug 10 13:08 test.sh
-$ ./folder/test.sh
+$ wsl
+$ cd ~/folder
+$ chmod 644 test.sh
+$ ls -l test.sh
+-rw-r--r-- 1 yuhyun_lim yuhyun_lim 44 Aug 10 13:50 test.sh
+$ ./test.sh
+bash: line 1: ./test.sh: Permission denied
+$ chmod 755 test.sh
+$ ls -l test.sh
+-rwxr-xr-x 1 yuhyun_lim yuhyun_lim 44 Aug 10 13:50 test.sh
+$ ./test.sh
 hello from folder script
-$ chmod 755 folder/test.sh
-$ ls -l folder/test.sh
--rwxr-xr-x 1 Yuhyun Lim 197121 44 Aug 10 13:08 test.sh
 ```
-> 환경B(Windows+git bash)는 NTFS라 실행 비트가 실제로 강제되지 않아 644 상태에서도 스크립트가 실행됨. 리눅스/macOS(환경A)에서는 `Permission denied`로 거부됨
+> WSL의 리눅스 네이티브 파일시스템(홈 디렉토리)에서는 실행 비트가 실제로 강제됨. 단, `/mnt/c/...`처럼 Windows 드라이브를 마운트한 경로(DrvFs)는 여전히 권한이 적용되지 않아 여기서는 홈 디렉토리(`~/folder`)에 별도로 실습함
 
 ### 2-3. 파일 쓰기 권한 테스트
 `chmod 400 파일`: 소유자에게 읽기 권한만 남기고 쓰기·실행 권한을 모두 제거하는 명령어
