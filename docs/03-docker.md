@@ -171,41 +171,107 @@ ubuntu:latest        678c6550cc43        160MB         45.3MB
 ```
 
 ### 3-5. 컨테이너 실행/중지 및 목록 확인
-`docker run -d --name 이름 이미지 명령`: 이미지를 컨테이너로 실행하는 명령어(`-d`는 백그라운드 실행)
-- hello-world
+`docker run`: 이미지를 컨테이너로 실행하는 명령어
 ```bash
-$ docker run hello-world
-
-Hello from Docker!
-This message shows that your installation appears to be working correctly.
-
-To generate this message, Docker took the following steps:
- 1. The Docker client contacted the Docker daemon.
- 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
-    (amd64)
- 3. The Docker daemon created a new container from that image which runs the
-    executable that produces the output you are currently reading.
- 4. The Docker daemon streamed that output to the Docker client, which sent it
-    to your terminal.
-
-To try something more ambitious, you can run an Ubuntu container with:
- $ docker run -it ubuntu bash
-
-Share images, automate workflows, and more with a free Docker ID:
- https://hub.docker.com/
-
-For more examples and ideas, visit:
- https://docs.docker.com/get-started/
+$ docker run nginx
+Unable to find image 'nginx:latest' locally
+latest: Pulling from library/nginx
+5a4222b844e8: Download complete 
+5a4222b844e8: Pull complete 
+c0df8d325117: Pull complete 
+d84ae7b21412: Pull complete 
+3c55dc422a81: Pull complete 
+26c307b5e35a: Pull complete 
+f5de6e85ac74: Pull complete 
+0f03cb4db0ef: Download complete 
+92fcf0fc2ef2: Download complete 
+Digest: sha256:8541484afbc9c8a5a8a99b379568ebbc957f658583ec9448fc43104229c03cf8
+Status: Downloaded newer image for nginx:latest
+/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+/docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+/docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+/docker-entrypoint.sh: Configuration complete; ready for start up
+2026/08/10 06:40:33 [notice] 1#1: using the "epoll" event method
+2026/08/10 06:40:33 [notice] 1#1: nginx/1.31.3
+2026/08/10 06:40:33 [notice] 1#1: built by gcc 14.2.0 (Debian 14.2.0-19) 
+2026/08/10 06:40:33 [notice] 1#1: OS: Linux 6.18.33.2-microsoft-standard-WSL2
+2026/08/10 06:40:33 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2026/08/10 06:40:33 [notice] 1#1: start worker processes
+2026/08/10 06:40:33 [notice] 1#1: start worker process 29
+2026/08/10 06:40:33 [notice] 1#1: start worker process 30
+2026/08/10 06:40:33 [notice] 1#1: start worker process 31
+2026/08/10 06:40:33 [notice] 1#1: start worker process 32
+2026/08/10 06:40:33 [notice] 1#1: start worker process 33
+2026/08/10 06:40:33 [notice] 1#1: start worker process 34
+2026/08/10 06:40:33 [notice] 1#1: start worker process 35
+2026/08/10 06:40:33 [notice] 1#1: start worker process 36
+2026/08/10 06:40:33 [notice] 1#1: start worker process 37
+2026/08/10 06:40:33 [notice] 1#1: start worker process 38
+2026/08/10 06:40:33 [notice] 1#1: start worker process 39
+2026/08/10 06:40:33 [notice] 1#1: start worker process 40
+^C2026/08/10 06:40:49 [notice] 1#1: signal 2 (SIGINT) received, exiting
+2026/08/10 06:40:49 [notice] 29#29: exiting
+2026/08/10 06:40:49 [notice] 31#31: exiting
+2026/08/10 06:40:49 [notice] 33#33: exiting
+2026/08/10 06:40:49 [notice] 32#32: exiting
+2026/08/10 06:40:49 [notice] 29#29: exit
+2026/08/10 06:40:49 [notice] 34#34: exiting
+2026/08/10 06:40:49 [notice] 31#31: exit
+2026/08/10 06:40:49 [notice] 38#38: exiting
+2026/08/10 06:40:49 [notice] 39#39: exiting
+2026/08/10 06:40:49 [notice] 34#34: exit
+2026/08/10 06:40:49 [notice] 37#37: exiting
+2026/08/10 06:40:49 [notice] 36#36: exiting
+2026/08/10 06:40:49 [notice] 35#35: exiting
+2026/08/10 06:40:49 [notice] 37#37: exit
+2026/08/10 06:40:49 [notice] 39#39: exit
+2026/08/10 06:40:49 [notice] 36#36: exit
+2026/08/10 06:40:49 [notice] 30#30: exiting
+2026/08/10 06:40:49 [notice] 33#33: exit
+2026/08/10 06:40:49 [notice] 30#30: exit
+2026/08/10 06:40:49 [notice] 38#38: exit
+2026/08/10 06:40:49 [notice] 35#35: exit
+2026/08/10 06:40:49 [notice] 32#32: exit
+2026/08/10 06:40:49 [notice] 40#40: exiting
+2026/08/10 06:40:49 [notice] 40#40: exit
+2026/08/10 06:40:49 [notice] 1#1: signal 14 (SIGALRM) received
+2026/08/10 06:40:49 [notice] 1#1: signal 17 (SIGCHLD) received from 39
+2026/08/10 06:40:49 [notice] 1#1: worker process 39 exited with code 0
+2026/08/10 06:40:49 [notice] 1#1: signal 29 (SIGIO) received
+2026/08/10 06:40:49 [notice] 1#1: signal 17 (SIGCHLD) received from 38
+2026/08/10 06:40:49 [notice] 1#1: worker process 37 exited with code 0
+2026/08/10 06:40:49 [notice] 1#1: worker process 38 exited with code 0
+2026/08/10 06:40:49 [notice] 1#1: signal 29 (SIGIO) received
+2026/08/10 06:40:49 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2026/08/10 06:40:49 [notice] 1#1: worker process 29 exited with code 0
+2026/08/10 06:40:49 [notice] 1#1: worker process 36 exited with code 0
+2026/08/10 06:40:49 [notice] 1#1: signal 29 (SIGIO) received
+2026/08/10 06:40:49 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2026/08/10 06:40:49 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2026/08/10 06:40:49 [notice] 1#1: worker process 31 exited with code 0
+2026/08/10 06:40:49 [notice] 1#1: signal 29 (SIGIO) received
+2026/08/10 06:40:49 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2026/08/10 06:40:49 [notice] 1#1: worker process 32 exited with code 0
+2026/08/10 06:40:49 [notice] 1#1: worker process 35 exited with code 0
+2026/08/10 06:40:49 [notice] 1#1: signal 29 (SIGIO) received
+2026/08/10 06:40:49 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2026/08/10 06:40:49 [notice] 1#1: worker process 33 exited with code 0
+2026/08/10 06:40:49 [notice] 1#1: signal 29 (SIGIO) received
+2026/08/10 06:40:49 [notice] 1#1: signal 17 (SIGCHLD) received from 40
+2026/08/10 06:40:49 [notice] 1#1: worker process 40 exited with code 0
+2026/08/10 06:40:49 [notice] 1#1: signal 29 (SIGIO) received
+2026/08/10 06:40:49 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2026/08/10 06:40:49 [notice] 1#1: worker process 34 exited with code 0
+2026/08/10 06:40:49 [notice] 1#1: signal 29 (SIGIO) received
+2026/08/10 06:40:49 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2026/08/10 06:40:49 [notice] 1#1: worker process 30 exited with code 0
+2026/08/10 06:40:49 [notice] 1#1: exit
 ```
-> hello-world 이미지는 메시지 한 줄을 출력하고 바로 종료되는 프로그램
-> 실행 직후 `docker ps`를 확인하면 컨테이너가 이미 종료되어 빈 목록이 나오는 것이 정상
-- ubuntu
-```bash
-$ docker run ubuntu
-```
-> ubuntu 이미지의 기본 명령은 `bash` (docker run ubuntu는 사실상 docker run ubuntu bash와 같은 뜻)
-> `-it` 없이 실행하면 터미널이 연결되지 않아 bash가 바로 종료되고, 컨테이너도 함께 종료됨
-
 `docker ps`: 현재 실행 중인 컨테이너 목록을 출력하는 명령어
 ```bash
 $ docker ps

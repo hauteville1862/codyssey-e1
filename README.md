@@ -59,7 +59,7 @@ codyssey-e1/
 | --- | --- | --- | --- |
 | 01 | ✅ | 터미널 기본 조작 | [docs/01-terminal.md](docs/01-terminal.md) |
 | 02 | ✅ | 파일/디렉토리 권한 확인 및 변경 실습 | [docs/02-permission.md](docs/02-permission.md) |
-| 03 | ⬜ | Docker 설치·점검 및 기본 운영 명령 | [docs/03-docker.md](docs/03-docker.md) |
+| 03 | ✅ | Docker 설치·점검 및 기본 운영 명령 | [docs/03-docker.md](docs/03-docker.md) |
 | 04 | ⬜ | 컨테이너 실행/관리 | [docs/04-container.md](docs/04-container.md) |
 | 05 | ⬜ | 기존 Dockerfile 기반 커스텀 이미지 제작 | [docs/05-dockerfile.md](docs/05-dockerfile.md) |
 | 06 | ⬜ | 포트 매핑 및 브라우저 접속 증거 | [docs/06-port.md](docs/06-port.md) |
