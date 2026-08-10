@@ -25,19 +25,17 @@
 
 | 번호 | 상태 | 항목 | 문서 |
 | --- | --- | --- | --- |
-| 01 | [x] | 터미널 기본 조작(위치 확인, 목록 확인, 이동, 생성, 복사, 이동/이름변경, 삭제) | [docs/01-terminal.md](docs/01-terminal.md) |
-| 02 | [ ] | 파일/디렉토리 권한 확인 및 변경 실습(변경 전/후 비교) | [docs/02-permission.md](docs/02-permission.md) |
-| 03 | [ ] | Docker 설치·점검(`docker --version`, `docker info`) 및 기본 운영 명령(`docker images`, `docker ps -a`, `docker logs`, `docker stats`) | [docs/03-docker.md](docs/03-docker.md) |
-| 04 | [ ] | 기존 Dockerfile 기반 커스텀 이미지 제작(웹 서버 컨테이너화) — Dockerfile 작성 | [docs/04-dockerfile.md](docs/04-dockerfile.md) |
-| 05 | [ ] | 포트 매핑 및 브라우저 접속 증거 | [docs/05-port.md](docs/05-port.md) |
-| 06 | [ ] | hello-world / ubuntu 컨테이너 실행 실습 및 목록 확인 | [docs/06-list.md](docs/06-list.md) |
-| 07 | [ ] | 기존 Dockerfile 기반 커스텀 이미지 제작(웹 서버 컨테이너화) — 이미지 빌드 | [docs/07-image-build.md](docs/07-image-build.md) |
-| 08 | [ ] | 바인드 마운트 반영 + Docker 볼륨 영속성 증거(컨테이너 삭제 전/후 비교) | [docs/08-volume.md](docs/08-volume.md) |
-| 09 | [ ] | Git 사용자 정보·기본 브랜치 설정 및 GitHub/VSCode 연동 | [docs/09-git-github.md](docs/09-git-github.md) |
+| 01 | ✅ | 터미널 기본 조작 | [docs/01-terminal.md](docs/01-terminal.md) |
+| 02 | ✅ | 파일/디렉토리 권한 확인 및 변경 실습 | [docs/02-permission.md](docs/02-permission.md) |
+| 03 | ⬜ | Docker 설치·점검 및 기본 운영 명령 | [docs/03-docker.md](docs/03-docker.md) |
+| 04 | ⬜ | 기존 Dockerfile 기반 커스텀 이미지 제작 — Dockerfile 작성 | [docs/04-dockerfile.md](docs/04-dockerfile.md) |
+| 05 | ⬜ | 포트 매핑 및 브라우저 접속 증거 | [docs/05-port.md](docs/05-port.md) |
+| 06 | ⬜ | hello-world / ubuntu 컨테이너 실행 실습 및 목록 확인 | [docs/06-list.md](docs/06-list.md) |
+| 07 | ⬜ | 기존 Dockerfile 기반 커스텀 이미지 제작 — 이미지 빌드 | [docs/07-image-build.md](docs/07-image-build.md) |
+| 08 | ⬜ | 바인드 마운트 반영 + Docker 볼륨 영속성 증거 | [docs/08-volume.md](docs/08-volume.md) |
+| 09 | ⬜ | Git 사용자 정보·기본 브랜치 설정 및 GitHub/VSCode 연동 | [docs/09-git-github.md](docs/09-git-github.md) |
 
 ## 4. 트러블슈팅
-
-미션 요구사항(2건 이상, 문제 → 원인 가설 → 확인 → 해결/대안)에 따라 기록합니다.
 
 - [문제 1 - 스크린샷을 첨부했을 때 이미지가 제대로 보이지 않음](troubleshooting/screenshot-error.md)
 - 문제 2 - [진행 중]
