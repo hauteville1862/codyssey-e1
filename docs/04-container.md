@@ -47,13 +47,6 @@ root@969bb9ddff00:/# echo "Hello"
 Hello
 root@969bb9ddff00:/# exit
 exit
-```
-```bash
-
-```
-```bash
-
-```
 
 ### 4-4. 컨테이너 종료/유지 차이 (attach / exec)
 `docker attach 컨테이너`: 실행 중인 컨테이너의 메인 프로세스(PID 1)에 그대로 연결하는 명령어. 여기서 나가면(exit) 메인 프로세스가 끝나 컨테이너도 함께 종료될 수 있음
