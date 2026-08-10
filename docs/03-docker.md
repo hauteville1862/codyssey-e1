@@ -323,10 +323,7 @@ docker logs test-nginx
 ### 3-7. 컨테이너 리소스 확인
 `docker stats`: 실행 중인 컨테이너의 CPU·메모리·네트워크 등 리소스 사용량을 실시간으로 출력하는 명령어
 ```bash
-$ docker log test-nginx
-docker: unknown command: docker log
-
-Run 'docker --help' for more information
+$ docker stats --no-stream test-nginx
 CONTAINER ID   NAME         CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
 aa80ff79035c   test-nginx   0.00%     0B / 0B             0.00%     0B / 0B   0B / 0B     0
 ```
