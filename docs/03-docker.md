@@ -151,15 +151,23 @@ Digest: sha256:678c6550cc43645e08669028bc177f50be4e7c5b8cca677067b1914d4afc7a03
 Status: Downloaded newer image for ubuntu:latest
 docker.io/library/ubuntu:latest
 ```
+```bash
+$ docker pull nginx
+Using default tag: latest
+latest: Pulling from library/nginx
+Digest: sha256:8541484afbc9c8a5a8a99b379568ebbc957f658583ec9448fc43104229c03cf8
+Status: Image is up to date for nginx:latest
+docker.io/library/nginx:latest
+```
 
 ### 3-4. 이미지 목록 확인
 `docker images`: 로컬에 저장된 이미지 목록을 출력하는 명령어
 ```bash
 $ docker images
-                                                                      i Info →   U  In Use
 IMAGE                ID             DISK USAGE   CONTENT SIZE   EXTRA
-hello-world:latest   7f4da0fc94bc       25.9kB         9.49kB        
-ubuntu:latest        678c6550cc43        160MB         45.3MB
+hello-world:latest   7f4da0fc94bc       25.9kB         9.49kB   U    
+nginx:latest         8541484afbc9        241MB           66MB   U    
+ubuntu:latest        678c6550cc43        160MB         45.3MB   U
 ```
 
 ### 3-5. 컨테이너 실행/중지 및 목록 확인
