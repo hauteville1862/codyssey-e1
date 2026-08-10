@@ -1,8 +1,8 @@
-# README
+# 내 컴퓨터에 개발자용 '작업실' 꾸미기
 
 ## 1. 프로젝트 개요
 
-**내 컴퓨터에 개발자용 '작업실' 꾸미기** — 개발 워크스테이션을 손으로 직접 세팅하며 리눅스 CLI(터미널), Docker(컨테이너), Git/GitHub(버전 관리)를 익히는 미션입니다.
+개발 워크스테이션을 손으로 직접 세팅하며 리눅스 CLI(터미널), Docker(컨테이너), Git/GitHub(버전 관리)를 익히는 미션입니다.
 
 - **목표**: 코드가 "내 컴퓨터에서만" 돌아가는 문제를 줄이고, 팀원 누구나 같은 방식으로 실행·배포·디버깅할 수 있는 재현 가능한 개발 환경을 구성한다.
 - **수행 흐름**: 터미널로 작업 디렉토리·권한 정리 → Docker 설치 및 점검 → 기존 Dockerfile 기반 커스텀 이미지 제작 → 포트 매핑으로 접속 확인 → 바인드 마운트/볼륨으로 "변경 반영"과 "데이터 영속성" 검증 → Git 설정 및 GitHub/VSCode 연동
@@ -28,10 +28,10 @@
 | 01 | ✅ | 터미널 기본 조작 | [docs/01-terminal.md](docs/01-terminal.md) |
 | 02 | ✅ | 파일/디렉토리 권한 확인 및 변경 실습 | [docs/02-permission.md](docs/02-permission.md) |
 | 03 | ⬜ | Docker 설치·점검 및 기본 운영 명령 | [docs/03-docker.md](docs/03-docker.md) |
-| 04 | ⬜ | 기존 Dockerfile 기반 커스텀 이미지 제작 — Dockerfile 작성 | [docs/04-dockerfile.md](docs/04-dockerfile.md) |
+| 04 | ⬜ | 기존 Dockerfile 기반 커스텀 이미지 제작 | [docs/04-dockerfile.md](docs/04-dockerfile.md) |
 | 05 | ⬜ | 포트 매핑 및 브라우저 접속 증거 | [docs/05-port.md](docs/05-port.md) |
 | 06 | ⬜ | hello-world / ubuntu 컨테이너 실행 실습 및 목록 확인 | [docs/06-list.md](docs/06-list.md) |
-| 07 | ⬜ | 기존 Dockerfile 기반 커스텀 이미지 제작 — 이미지 빌드 | [docs/07-image-build.md](docs/07-image-build.md) |
+| 07 | ⬜ | 기존 Dockerfile 기반 커스텀 이미지 빌드 | [docs/07-image-build.md](docs/07-image-build.md) |
 | 08 | ⬜ | 바인드 마운트 반영 + Docker 볼륨 영속성 증거 | [docs/08-volume.md](docs/08-volume.md) |
 | 09 | ⬜ | Git 사용자 정보·기본 브랜치 설정 및 GitHub/VSCode 연동 | [docs/09-git-github.md](docs/09-git-github.md) |
 
