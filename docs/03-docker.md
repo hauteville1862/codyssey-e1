@@ -165,25 +165,21 @@ ubuntu:latest        678c6550cc43        160MB         45.3MB
 ### 3-5. 컨테이너 실행/중지 및 목록 확인
 `docker run -d --name 이름 이미지 명령`: 이미지를 컨테이너로 실행하는 명령어(`-d`는 백그라운드 실행)
 ```bash
-$ docker run -d --name test-ubuntu ubuntu sleep 300
-7504a2caee67ab4afa182c0cd8b03e197d9e33e75b163a633b5262f0f63b05b9
+(여기에 docker run, docker ps, docker stop, docker ps -a 실행 결과를 붙여넣어 주세요)
 ```
 `docker ps`: 현재 실행 중인 컨테이너 목록을 출력하는 명령어
 ```bash
-$ docker ps
-CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS         PORTS     NAMES
-7504a2caee67   ubuntu    "sleep 300"   7 seconds ago   Up 6 seconds             test-ubuntu
+(여기에 docker run, docker ps, docker stop, docker ps -a 실행 결과를 붙여넣어 주세요)
 ```
+> hello-world 이미지는 메시지 한 줄을 출력하고 바로 종료되는 프로그램이라, 실행 직후 `docker ps`를 확인하면 컨테이너가 이미 종료되어 빈 목록이 나오는 것이 정상임(실행 중인 컨테이너만 보여주는 `docker ps`의 특성). 종료된 컨테이너까지 보려면 `docker ps -a` 필요
+
 `docker stop 컨테이너`: 실행 중인 컨테이너를 중지하는 명령어
 ```bash
-$ docker stop test-ubuntu
-test-ubuntu
+(여기에 docker run, docker ps, docker stop, docker ps -a 실행 결과를 붙여넣어 주세요)
 ```
 `docker ps -a`: 중지된 컨테이너까지 포함한 전체 컨테이너 목록을 출력하는 명령어
 ```bash
-$ docker ps -a
-CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS                       PORTS     NAMES
-7504a2caee67   ubuntu    "sleep 300"   29 seconds ago   Exited (137) 4 seconds ago             test-ubuntu
+(여기에 docker run, docker ps, docker stop, docker ps -a 실행 결과를 붙여넣어 주세요)
 ```
 
 ### 3-6. 컨테이너 로그 확인
