@@ -16,7 +16,7 @@ codyssey-e1/
 ├── codyssey/               # 미션 원본 지시문, 평가 기준 문서
 │   ├── 미션.md
 │   └── 평가기준.md
-├── docs/                   # 항목별(01~09) 수행 로그 및 검증 결과
+├── docs/                   # 항목별(01~10) 수행 로그 및 검증 결과
 │   ├── 01-terminal.md
 │   ├── 02-permission.md
 │   └── ...
@@ -60,12 +60,13 @@ codyssey-e1/
 | 01 | ✅ | 터미널 기본 조작 | [docs/01-terminal.md](docs/01-terminal.md) |
 | 02 | ✅ | 파일/디렉토리 권한 확인 및 변경 실습 | [docs/02-permission.md](docs/02-permission.md) |
 | 03 | ⬜ | Docker 설치·점검 및 기본 운영 명령 | [docs/03-docker.md](docs/03-docker.md) |
-| 04 | ⬜ | 기존 Dockerfile 기반 커스텀 이미지 제작 | [docs/04-dockerfile.md](docs/04-dockerfile.md) |
-| 05 | ⬜ | 포트 매핑 및 브라우저 접속 증거 | [docs/05-port.md](docs/05-port.md) |
-| 06 | ⬜ | hello-world / ubuntu 컨테이너 실행 실습 및 목록 확인 | [docs/06-list.md](docs/06-list.md) |
-| 07 | ⬜ | 기존 Dockerfile 기반 커스텀 이미지 빌드 | [docs/07-image-build.md](docs/07-image-build.md) |
-| 08 | ⬜ | 바인드 마운트 반영 + Docker 볼륨 영속성 증거 | [docs/08-volume.md](docs/08-volume.md) |
-| 09 | ⬜ | Git 사용자 정보·기본 브랜치 설정 및 GitHub/VSCode 연동 | [docs/09-git-github.md](docs/09-git-github.md) |
+| 04 | ⬜ | 컨테이너 실행/관리 | [docs/04-container.md](docs/04-container.md) |
+| 05 | ⬜ | 기존 Dockerfile 기반 커스텀 이미지 제작 | [docs/05-dockerfile.md](docs/05-dockerfile.md) |
+| 06 | ⬜ | 포트 매핑 및 브라우저 접속 증거 | [docs/06-port.md](docs/06-port.md) |
+| 07 | ⬜ | hello-world / ubuntu 컨테이너 실행 실습 및 목록 확인 | [docs/07-list.md](docs/07-list.md) |
+| 08 | ⬜ | 기존 Dockerfile 기반 커스텀 이미지 빌드 | [docs/08-image-build.md](docs/08-image-build.md) |
+| 09 | ⬜ | 바인드 마운트 반영 + Docker 볼륨 영속성 증거 | [docs/09-volume.md](docs/09-volume.md) |
+| 10 | ⬜ | Git 사용자 정보·기본 브랜치 설정 및 GitHub/VSCode 연동 | [docs/10-git-github.md](docs/10-git-github.md) |
 
 ## 5. 트러블슈팅
 
