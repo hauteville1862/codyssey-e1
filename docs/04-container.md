@@ -39,7 +39,20 @@ $ docker run ubuntu
 ### 4-3. 컨테이너 내부 진입 및 명령 실행
 `docker run -it 이미지 bash`: 터미널을 연결한 상태로 컨테이너에 진입해 대화형 셸을 실행하는 명령어
 ```bash
-(여기에 docker run -it ubuntu bash로 진입 후 ls, echo 실행 결과를 붙여넣어 주세요)
+$ docker run -it ubuntu bash
+root@969bb9ddff00:/# ls
+bin   dev  home  lib64  mnt  proc  run   srv  tmp  var
+boot  etc  lib   media  opt  root  sbin  sys  usr
+root@969bb9ddff00:/# echo "Hello"
+Hello
+root@969bb9ddff00:/# exit
+exit
+```
+```bash
+
+```
+```bash
+
 ```
 
 ### 4-4. 컨테이너 종료/유지 차이 (attach / exec)
