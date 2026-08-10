@@ -197,26 +197,34 @@ Share images, automate workflows, and more with a free Docker ID:
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
+> hello-world 이미지는 메시지 한 줄을 출력하고 바로 종료되는 프로그램
+> 실행 직후 `docker ps`를 확인하면 컨테이너가 이미 종료되어 빈 목록이 나오는 것이 정상
 - ubuntu
 ```bash
 $ docker run ubuntu
 ```
+> ubuntu 이미지의 기본 명령은 `bash` (docker run ubuntu는 사실상 docker run ubuntu bash와 같은 뜻)
+> `-it` 없이 실행하면 터미널이 연결되지 않아 bash가 바로 종료되고, 컨테이너도 함께 종료됨
 
 `docker ps`: 현재 실행 중인 컨테이너 목록을 출력하는 명령어
 ```bash
 $ docker ps
-CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS     NAMES
+aa80ff79035c   nginx     "/docker-entrypoint.…"   15 minutes ago   Up 15 minutes   80/tcp    test-nginx
 ```
-> hello-world 이미지는 메시지 한 줄을 출력하고 바로 종료되는 프로그램
-> 실행 직후 `docker ps`를 확인하면 컨테이너가 이미 종료되어 빈 목록이 나오는 것이 정상
-
 `docker stop 컨테이너`: 실행 중인 컨테이너를 중지하는 명령어
 ```bash
-(여기에 docker run, docker ps, docker stop, docker ps -a 실행 결과를 붙여넣어 주세요)
+$ docker stop test-nginx
+test-nginx
 ```
 `docker ps -a`: 중지된 컨테이너까지 포함한 전체 컨테이너 목록을 출력하는 명령어
 ```bash
-(여기에 docker run, docker ps, docker stop, docker ps -a 실행 결과를 붙여넣어 주세요)
+$ docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS                      PORTS     NAMES
+a44205714d0b   ubuntu        "/bin/bash"              10 minutes ago   Exited (0) 10 minutes ago             hopeful_gauss
+aa80ff79035c   nginx         "/docker-entrypoint.…"   18 minutes ago   Exited (0) 30 seconds ago             test-nginx
+589d5d8b53c8   ubuntu        "/bin/bash"              24 minutes ago   Exited (0) 24 minutes ago             relaxed_moore
+aeca63fc76ed   hello-world   "/hello"                 30 minutes ago   Exited (0) 30 minutes ago             interesting_napier
 ```
 
 ### 3-6. 컨테이너 로그 확인
