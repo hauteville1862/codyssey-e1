@@ -35,14 +35,12 @@ yuhyun_lim@DESKTOP-1KO5JJM:/mnt/c/Users/Yuhyun Lim/codyssey-e1/folder$
 ```
 `cd ..`: 한 단계 상위 디렉토리로 이동하는 명령어
 ```bash
-(여기에 cd 실행 결과를 붙여넣어 주세요)
+yuhyun_lim@DESKTOP-1KO5JJM:/mnt/c/Users/Yuhyun Lim/codyssey-e1/folder$ cd ..
+yuhyun_lim@DESKTOP-1KO5JJM:/mnt/c/Users/Yuhyun Lim/codyssey-e1$
 ```
 
 ### 1-5. 파일 & 폴더 이동 / 이름 변경
 `mv`: 파일이나 폴더를 다른 위치로 이동시키거나, 같은 위치에서 이름을 변경하는 명령어
-```bash
-(여기에 mv 실행 결과를 붙여넣어 주세요)
-```
 ![스크린샷](../screenshots/file_folder_move.png)
 
 ### 1-6. 파일 & 폴더 복사
