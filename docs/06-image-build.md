@@ -58,4 +58,3 @@ $ docker ps
 CONTAINER ID   IMAGE             COMMAND                  CREATED          STATUS          PORTS                                     NAMES
 93b2ca033581   codyssey-e1-web   "/docker-entrypoint.…"   17 seconds ago   Up 15 seconds   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   codyssey-e1-web-container
 ```
-> 포트 매핑 옵션(`-p`)과 브라우저 접속 증거는 [07 포트 매핑](07-port.md)에서 다룸. 테스트가 끝난 뒤 컨테이너/이미지 정리는 [08 커스텀 이미지 삭제 및 정리](08-cleanup.md)에서 다룸
