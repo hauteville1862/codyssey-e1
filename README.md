@@ -20,7 +20,7 @@ codyssey-e1/
 ├── codyssey/               # 미션 원본 지시문, 평가 기준 문서
 │   ├── 미션.md
 │   └── 평가기준.md
-├── docs/                   # 항목별(01~09) 수행 로그 및 검증 결과
+├── docs/                   # 항목별(01~10) 수행 로그 및 검증 결과
 │   ├── 01-terminal.md
 │   ├── 02-permission.md
 │   └── ...
@@ -68,8 +68,9 @@ codyssey-e1/
 | 05 | ✅ | 기존 Dockerfile 기반 커스텀 이미지 제작 | [docs/05-dockerfile.md](docs/05-dockerfile.md) |
 | 06 | ⬜ | 기존 Dockerfile 기반 커스텀 이미지 빌드 | [docs/06-image-build.md](docs/06-image-build.md) |
 | 07 | ⬜ | 포트 매핑 및 브라우저 접속 증거 | [docs/07-port.md](docs/07-port.md) |
-| 08 | ⬜ | 바인드 마운트 반영 + Docker 볼륨 영속성 증거 | [docs/08-volume.md](docs/08-volume.md) |
-| 09 | ⬜ | Git 사용자 정보·기본 브랜치 설정 및 GitHub/VSCode 연동 | [docs/09-git-github.md](docs/09-git-github.md) |
+| 08 | ⬜ | 커스텀 이미지 삭제 및 정리 | [docs/08-cleanup.md](docs/08-cleanup.md) |
+| 09 | ⬜ | 바인드 마운트 반영 + Docker 볼륨 영속성 증거 | [docs/09-volume.md](docs/09-volume.md) |
+| 10 | ⬜ | Git 사용자 정보·기본 브랜치 설정 및 GitHub/VSCode 연동 | [docs/10-git-github.md](docs/10-git-github.md) |
 
 ## V. 트러블슈팅
 
