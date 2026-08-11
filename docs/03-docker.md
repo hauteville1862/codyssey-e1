@@ -26,6 +26,7 @@ Dockerfile을 `docker build`로 빌드하면 이미지가 만들어지고, 이�
 | `docker stats` | 컨테이너의 CPU·메모리 등 리소스 사용량 실시간 확인 |
 | `docker rm 컨테이너` | 중지된 컨테이너 삭제 |
 | `docker rmi 이미지` | 사용하지 않는 이미지 삭제 |
+| `docker commit 컨테이너 이미지이름[:태그]` | 컨테이너의 현재 상태를 이름을 지정해 새 이미지로 저장 |
 
 ### 3-1. Docker 버전 확인
 `docker --version`: 설치된 Docker 클라이언트 버전을 출력하는 명령어
@@ -424,3 +425,18 @@ Untagged: nginx:latest
 Deleted: sha256:8541484afbc9c8a5a8a99b379568ebbc957f658583ec9448fc43104229c03cf8
 ```
 > 이미지를 참조하는 컨테이너가 남아있으면 `docker rmi`가 실패하므로, 먼저 `docker rm`으로 관련 컨테이너를 정리한 뒤 이미지를 삭제함
+
+### 3-9. 컨테이너를 이미지로 저장 (docker commit)
+`docker commit 컨테이너 이미지이름[:태그]`: 컨테이너의 현재 상태(파일 변경 등)를 새 이미지로 저장하는 명령어
+```bash
+$ docker run -it ubuntu bash
+root@a1c2e4f6b8d0:/# apt-get update
+root@a1c2e4f6b8d0:/# exit
+$ docker commit a1c2e4f6b8d0 my-ubuntu:latest
+sha256:...
+$ docker images
+REPOSITORY   TAG      IMAGE ID       CREATED         SIZE
+my-ubuntu    latest   xxxxxxxxxxxx   5 seconds ago   ...MB
+ubuntu       latest   678c6550cc43   ...             160MB
+```
+> `docker commit` 뒤에는 컨테이너 ID/이름과, 붙이고 싶은 `저장소이름:태그`를 순서대로 지정함 (태그를 생략하면 `latest`가 기본값). 이미지는 불변이지만, 컨테이너 안에서 변경한 내용을 `commit`으로 캡처해야 새 이미지에 반영됨

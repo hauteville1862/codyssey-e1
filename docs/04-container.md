@@ -85,7 +85,7 @@ da29ea083a34ee0ef7354f0a296b283d5ca89108bcc04a9fa304ce3c5b20ad2a
 $ docker ps
 CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS          PORTS     NAMES
 c098e8b5472d   ubuntu    "bash"    47 minutes ago   Up 47 minutes             my-container
-yuhyun_lim@DESKTOP-1KO5JJM:/mnt/c/Users/Yuhyun Lim/codyssey-e1$ docker exec -it my-container bash
+$ docker exec -it my-container bash
 root@c098e8b5472d:/# exit
 exit
 ```
@@ -94,25 +94,10 @@ exit
 $ docker attach my-container
 root@c098e8b5472d:/# exit
 exit
-yuhyun_lim@DESKTOP-1KO5JJM:/mnt/c/Users/Yuhyun Lim/codyssey-e1$ docker ps
+$ docker ps
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
-yuhyun_lim@DESKTOP-1KO5JJM:/mnt/c/Users/Yuhyun Lim/codyssey-e1$ docker ps -a
+$ docker ps -a
 CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS                      PORTS     NAMES
 c098e8b5472d   ubuntu    "bash"        51 minutes ago   Exited (0) 19 seconds ago             my-container
 2d2ff1dc3ccb   ubuntu    "/bin/bash"   2 hours ago      Exited (0) 2 hours ago                awesome_babbage
 ```
-
-### 4-6. 컨테이너를 이미지로 저장 (docker commit)
-`docker commit 컨테이너 이미지이름[:태그]`: 컨테이너의 현재 상태(파일 변경 등)를 새 이미지로 저장하는 명령어
-```bash
-$ docker run -it ubuntu bash
-root@a1c2e4f6b8d0:/# apt-get update
-root@a1c2e4f6b8d0:/# exit
-$ docker commit a1c2e4f6b8d0 my-ubuntu:latest
-sha256:...
-$ docker images
-REPOSITORY   TAG      IMAGE ID       CREATED         SIZE
-my-ubuntu    latest   xxxxxxxxxxxx   5 seconds ago   ...MB
-ubuntu       latest   678c6550cc43   ...             160MB
-```
-> `docker commit` 뒤에는 컨테이너 ID/이름과, 붙이고 싶은 `저장소이름:태그`를 순서대로 지정함 (태그를 생략하면 `latest`가 기본값)
