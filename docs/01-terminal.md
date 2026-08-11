@@ -41,7 +41,7 @@ yuhyun_lim@DESKTOP-1KO5JJM:/mnt/c/Users/Yuhyun Lim/codyssey-e1$
 
 ### 1-5. 파일 & 폴더 이동 / 이름 변경
 `mv`: 파일이나 폴더를 다른 위치로 이동시키거나, 같은 위치에서 이름을 변경하는 명령어
-![스크린샷](../screenshots/file_folder_move.png)
+![스크린샷](../img/file_folder_move.png)
 
 ### 1-6. 파일 & 폴더 복사
 `cp`: 파일을 복사하는 명령어

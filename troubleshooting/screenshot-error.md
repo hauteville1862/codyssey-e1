@@ -3,15 +3,15 @@
 ### 1-1 문제
 스크린샷 파일을 만들고 이미지를 docs 내 문서에 첨부했을 때, 아래와 같이 이미지가 보이지 않는 오류가 발생함.
 ```bash
-![스크린샷](screenshots/파일&폴더_이동.png)
+![스크린샷](img/파일&폴더_이동.png)
 ```
-![스크린샷](../screenshots/screenshot-error1.png)
+![스크린샷](../img/screenshot-error1.png)
 
 ### 1-2 가설
 #### 가설1
 > 상대경로가 아닌 절대경로로 경로를 썼기 때문에 오류가 난 건가?
 
-➡ screenshots 폴더에서 우클릭 후 '상대 경로 복사'를 사용했지만 해결되지 않음.
+➡ img 폴더에서 우클릭 후 '상대 경로 복사'를 사용했지만 해결되지 않음.
 #### 가설2
 > 파일명에 특수문자나 한글이 들어가 있기 때문인가?
 
@@ -23,11 +23,11 @@
 ### 1-3 확인
 파일 경로 앞에 상위 디렉토리로 이동하는 .. 을 넣어 상대 경로를 수정함.
 ```bash
-![스크린샷](../screenshots/file_folder_move.png)
+![스크린샷](../img/file_folder_move.png)
 ```
 
 ### 1-4 해결 
-![스크린샷](../screenshots/file_folder_move.png)
+![스크린샷](../img/file_folder_move.png)
 
 
 <br>

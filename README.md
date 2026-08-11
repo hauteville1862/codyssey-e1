@@ -24,7 +24,7 @@ codyssey-e1/
 │   ├── 01-terminal.md
 │   ├── 02-permission.md
 │   └── ...
-├── screenshots/            # 문서에서 참조하는 캡처 이미지
+├── img/                    # 문서에서 참조하는 캡처 이미지
 └── troubleshooting/         # 진행 중 발생한 문제와 해결 과정 기록
     └── screenshot-error.md
 ```
