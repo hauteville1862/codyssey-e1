@@ -80,7 +80,7 @@ da29ea083a34ee0ef7354f0a296b283d5ca89108bcc04a9fa304ce3c5b20ad2a
 > 백그라운드 실행과 attach/exec의 관계에 대한 보충 설명은 [00 개념 노트](00-concepts.md#백그라운드-실행과-attachexec) 참고
 
 ### 4-5. 컨테이너 종료/유지 차이 (attach / exec)
-`docker exec -it 컨테이너 명령`: 실행 중인 컨테이너 안에서 별도의 새 프로세스를 실행하는 명령어. 나가도 메인 프로세스는 그대로 남아있어 컨테이너가 계속 유지됨
+`docker exec -it 컨테이너 명령`: 실행 중인 컨테이너 안에서 별도의 새 프로세스를 실행하는 명령어.
 ```bash
 $ docker ps
 CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS          PORTS     NAMES
@@ -89,7 +89,8 @@ $ docker exec -it my-container bash
 root@c098e8b5472d:/# exit
 exit
 ```
-`docker attach 컨테이너`: 실행 중인 컨테이너의 메인 프로세스(PID 1)에 그대로 연결하는 명령어. 여기서 나가면(exit) 메인 프로세스가 끝나 컨테이너도 함께 종료될 수 있음
+> 나가도 메인 프로세스는 그대로 남아있어 컨테이너가 계속 유지됨
+`docker attach 컨테이너`: 실행 중인 컨테이너의 메인 프로세스(PID 1)에 그대로 연결하는 명령어.
 ```bash
 $ docker attach my-container
 root@c098e8b5472d:/# exit
@@ -101,3 +102,4 @@ CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS                  
 c098e8b5472d   ubuntu    "bash"        51 minutes ago   Exited (0) 19 seconds ago             my-container
 2d2ff1dc3ccb   ubuntu    "/bin/bash"   2 hours ago      Exited (0) 2 hours ago                awesome_babbage
 ```
+> 여기서 나가면(exit) 메인 프로세스가 끝나 컨테이너도 함께 종료될 수 있음
