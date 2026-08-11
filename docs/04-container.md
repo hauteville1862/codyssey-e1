@@ -63,22 +63,21 @@ exit
 ```
 `docker run -it --name 이름 이미지 bash`: 컨테이너에 이름을 지정할 수 있음 
 ```bash
-$ docker run -it --name my-container ubuntu
+$ docker run -it --name my-container ubuntu bash
 root@39f1021873e3:/# exit    
 exit
 ```
 > 지정하지 않으면 Docker가 무작위 이름을 자동으로 붙임
 
 ### 4-4. 컨테이너 백그라운드 실행
-`docker run -d 이미지`: 컨테이너를 백그라운드(detached)로 실행하고 터미널 제어권은 바로 돌려주는 명령어. `-it`와 함께 `-dit`으로 쓰면 tty를 연결한 채로 컨테이너를 계속 살려둘 수 있음
+`docker run -d 이미지`: 컨테이너를 백그라운드(detached)로 실행하고 터미널 제어권은 바로 돌려주는 명령어. 
 ```bash
-$ docker run -dit --name test-box ubuntu bash
-3f8a2d9c1e7b4a6f0c2d8e9b1a7f3c5d6e8b0a2c4f6d8e0b2a4c6e8f0d2b4a6c
-$ docker ps
-CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS         NAMES
-3f8a2d9c1e7b   ubuntu    "bash"    3 seconds ago   Up 3 seconds   test-box
+$ docker run -dit --name my-container ubuntu bash
+da29ea083a34ee0ef7354f0a296b283d5ca89108bcc04a9fa304ce3c5b20ad2a
 ```
-> attach/exec를 실습하려면 컨테이너가 계속 살아있어야 함. `-it`만으로 포그라운드 실행하면 상호작용을 마치고 `exit`하는 순간 컨테이너도 같이 종료되므로, `-dit`으로 백그라운드에 띄워두고 이후 attach/exec로 접속하는 방식을 사용함
+> attach/exec를 실습하려면 컨테이너가 계속 살아있어야 함.
+
+> 백그라운드 실행과 attach/exec의 관계에 대한 보충 설명은 [04 보충 노트](04-note-background.md) 참고
 
 ### 4-5. 컨테이너 종료/유지 차이 (attach / exec)
 `docker exec -it 컨테이너 명령`: 실행 중인 컨테이너 안에서 별도의 새 프로세스를 실행하는 명령어. 나가도 메인 프로세스는 그대로 남아있어 컨테이너가 계속 유지됨
