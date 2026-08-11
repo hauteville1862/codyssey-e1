@@ -1,6 +1,6 @@
 # 내 컴퓨터에 개발자용 '작업실' 꾸미기
 
-## 1. 프로젝트 개요
+## I. 프로젝트 개요
 
 개발 워크스테이션을 손으로 직접 세팅하며 리눅스 CLI(터미널), Docker(컨테이너), Git/GitHub(버전 관리)를 익히는 미션.
 
@@ -8,7 +8,7 @@
 - **수행 흐름**: 터미널로 작업 디렉토리·권한 정리 → Docker 설치 및 점검 → 기존 Dockerfile 기반 커스텀 이미지 제작 → 포트 매핑으로 접속 확인 → 바인드 마운트/볼륨으로 "변경 반영"과 "데이터 영속성" 검증 → Git 설정 및 GitHub/VSCode 연동
 - **평가 관점**(`평가기준.md` 기준): 기능 동작 검증, 동작 구조 설계, 핵심 기술 원리 적용, 심층 인터뷰의 4개 항목으로 PASS/FAIL 평가
 
-## 2. 디렉토리 구조
+## II. 디렉토리 구조
 
 ```
 codyssey-e1/
@@ -29,7 +29,7 @@ codyssey-e1/
     └── screenshot-error.md
 ```
 
-## 3. 실행 환경
+## III. 실행 환경
 
 ### 환경A — 코디세이 학습장 (iMac)
 
@@ -55,7 +55,7 @@ codyssey-e1/
 
 > Docker Desktop 설치됨(`docker context ls` 기준 `desktop-linux` 컨텍스트). 터미널에서 `docker` 명령어 바로 사용 가능.
 
-## 4. 수행 항목
+## IV. 수행 항목
 
 미션 요구사항(터미널/권한/Docker/Dockerfile/포트/마운트·볼륨/Git·GitHub) 기준 체크리스트. 각 항목의 상세 수행 로그와 검증 결과는 문서 링크에서 확인 가능.
 
@@ -72,7 +72,7 @@ codyssey-e1/
 | 09 | ⬜ | 바인드 마운트 반영 + Docker 볼륨 영속성 증거 | [docs/09-volume.md](docs/09-volume.md) |
 | 10 | ⬜ | Git 사용자 정보·기본 브랜치 설정 및 GitHub/VSCode 연동 | [docs/10-git-github.md](docs/10-git-github.md) |
 
-## 5. 트러블슈팅
+## V. 트러블슈팅
 
 - [문제 1 - 스크린샷을 첨부했을 때 이미지가 제대로 보이지 않음](troubleshooting/screenshot-error.md)
 - 문제 2 - [진행 중]
