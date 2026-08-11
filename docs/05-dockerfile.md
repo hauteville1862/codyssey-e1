@@ -5,16 +5,12 @@
 | 지시어 | 의미 |
 | --- | --- |
 | `FROM` | 베이스 이미지를 지정 (Dockerfile의 첫 줄) |
-| `COPY` | 호스트의 파일/디렉토리를 이미지 내부로 복사 |
-| `RUN` | 이미지 빌드 시점에 실행되는 명령 (패키지 설치 등, 결과가 이미지 레이어에 반영됨) |
-| `CMD` | 컨테이너 실행 시 기본으로 실행되는 명령 (`docker run` 인자로 덮어쓸 수 있음) |
-| `ENTRYPOINT` | 컨테이너의 고정 진입점 (`CMD`는 `ENTRYPOINT`의 기본 인자로 동작) |
-| `ENV` | 이미지/컨테이너에서 사용할 환경 변수 지정 |
-| `WORKDIR` | 이후 명령이 실행될 작업 디렉토리 지정 |
-| `EXPOSE` | 컨테이너가 사용하는 포트를 문서화 (실제 매핑은 `docker run -p`에서 수행) |
 | `LABEL` | 이미지에 메타데이터(작성자, 버전 등)를 부여 |
+| `WORKDIR` | 이후 명령이 실행될 작업 디렉토리 지정 |
+| `COPY` | 호스트의 파일/디렉토리를 이미지 내부로 복사 |
+| `EXPOSE` | 컨테이너가 사용하는 포트를 문서화 (실제 매핑은 `docker run -p`에서 수행) |
 
-기존 Dockerfile/이미지를 기반으로 커스텀 이미지를 만드는 두 가지 방식 중 하나를 선택함 (`미션.md` 7번 항목 기준)
+기존 Dockerfile/이미지를 기반으로 커스텀 이미지를 만드는 두 가지 방식 중 하나를 선택함.
 - (A) 웹 서버 베이스 이미지(nginx/apache 등) + 정적 콘텐츠·설정 교체
 - (B) Linux 베이스 이미지(ubuntu/alpine 등) + 패키지/사용자/환경변수/헬스체크 등 기본 기능 추가
 
@@ -32,7 +28,7 @@
 ```
 선택: (A) 웹 서버 베이스 이미지 활용 - nginx:alpine
 
-이유
+이유:
 - 미션 요구사항 (A)안("웹 서버 베이스 이미지 + 정적 콘텐츠·설정 교체")에 부합
   미션 예시의 Dockerfile도 동일하게 `FROM nginx:alpine`을 사용함
 - alpine 계열이라 이미지 용량이 작아 pull/build 속도가 빠름
@@ -43,16 +39,32 @@
 
 ### 5-2. Dockerfile 작성
 - Dockerfile: 이미지를 어떻게 만들지 순서대로 적어둔 빌드 스크립트 (텍스트 파일)
+> [00 개념 노트 - Dockerfile이란 무엇인가](00-concepts.md#dockerfile이란-무엇인가) 참고
+> [00 개념 노트 - Dockerfile 작성 단계별 가이드](00-concepts.md#dockerfile-작성-단계별-가이드) 참고
 
 - 실제 파일
     - [app/Dockerfile](../app/Dockerfile)
     - [app/site/index.html](../app/site/index.html)
 
 ```dockerfile
-(여기에 작성한 Dockerfile 전체 내용을 붙여넣어 주세요)
+# 베이스 이미지 지정 (Dockerfile의 첫 줄)
+FROM nginx:alpine
+
+# 이미지에 메타데이터(제목) 부여
+LABEL org.opencontainers.image.title="codyssey-e1-web"
+
+# 이후 명령이 실행될 작업 디렉토리 지정 (nginx 기본 웹 루트와 동일)
+WORKDIR /usr/share/nginx/html
+
+# 호스트의 site/ 디렉토리 내용을 WORKDIR로 복사 (정적 콘텐츠 교체 = 커스텀 포인트)
+COPY site/ .
+
+# 컨테이너가 사용하는 포트 문서화 (실제 매핑은 docker run -p에서 수행)
+EXPOSE 80
 ```
 
 - `app/site/index.html`: nginx 기본 페이지 대신 서빙할 정적 콘텐츠. `COPY site/ .`로 `WORKDIR`(=`/usr/share/nginx/html`)에 그대로 복사됨
+> [00 개념 노트 - Dockerfile과 site/ 폴더의 관계](00-concepts.md#dockerfile과-site-폴더의-관계) 참고
 
 ### 5-3. 커스텀 포인트 정리
 적용한 커스텀 포인트별 목적을 정리 (미션 요구사항: 커스텀 포인트 각각의 목적 간단 요약)
