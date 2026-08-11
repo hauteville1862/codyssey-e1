@@ -49,7 +49,7 @@ $ docker run ubuntu
 > `-it` 없이 실행하면 터미널이 연결되지 않아 bash가 바로 종료되고, 컨테이너도 함께 종료됨
 
 ### 4-3. 컨테이너 내부 진입 및 명령 실행
-`docker run -it 이미지 bash`: 터미널을 연결한 상태로 컨테이너에 진입해 대화형 셸을 실행하는 명령어. `--name 이름`을 덧붙이면 컨테이너에 이름을 지정할 수 있음 (지정하지 않으면 Docker가 무작위 이름을 자동으로 붙임)
+`docker run -it 이미지 bash`: 터미널을 연결한 상태로 컨테이너에 진입해 대화형 셸을 실행하는 명령어.
 ```bash
 $ docker run -it ubuntu bash
 root@969bb9ddff00:/# ls
@@ -60,7 +60,7 @@ Hello
 root@969bb9ddff00:/# exit
 exit
 ```
-> `--name`은 컨테이너의 이름일 뿐이며 이미지 자체에 이름을 붙이는 것과는 다름 — 이미지에 이름을 붙이려면 `docker commit`(기존 컨테이너 기반, 4-5) 또는 `docker build -t`(Dockerfile 기반)를 사용해야 함
+> `docker run -it --name 이름 이미지 bash`처럼 `--name` 옵션을 추가하면 컨테이너에 이름을 지정할 수 있음 (지정하지 않으면 Docker가 무작위 이름을 자동으로 붙임)
 
 ### 4-4. 컨테이너 종료/유지 차이 (attach / exec)
 `docker attach 컨테이너`: 실행 중인 컨테이너의 메인 프로세스(PID 1)에 그대로 연결하는 명령어. 여기서 나가면(exit) 메인 프로세스가 끝나 컨테이너도 함께 종료될 수 있음
