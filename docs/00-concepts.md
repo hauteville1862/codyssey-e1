@@ -134,7 +134,7 @@ nginx가 정적 파일을 서빙하는 기본 경로는 `/usr/share/nginx/html`(
 
 ### 5. (선택) `EXPOSE` — 포트 문서화
 
-nginx는 기본적으로 80번 포트를 씀. `EXPOSE 80`을 추가하면 이 이미지가 어떤 포트를 쓰는지 문서화되지만, 실제 포트 매핑은 [06 포트 매핑](06-port.md)에서 `docker run -p`로 수행하므로 여기선 "설명 목적"임에 유의.
+nginx는 기본적으로 80번 포트를 씀. `EXPOSE 80`을 추가하면 이 이미지가 어떤 포트를 쓰는지 문서화되지만, 실제 포트 매핑은 [07 포트 매핑](07-port.md)에서 `docker run -p`로 수행하므로 여기선 "설명 목적"임에 유의.
 
 ### 6. `CMD`/`ENTRYPOINT` 결정
 
@@ -160,4 +160,4 @@ FROM → LABEL → WORKDIR → COPY → EXPOSE → CMD
 - **5-2**: 완성된 `app/Dockerfile` 전체 내용을 코드블록에 붙여넣기
 - **5-3**: 실제 사용한 지시어(`WORKDIR`, `COPY`, `EXPOSE` 등)별로 "적용 내용 → 목적"을 표에 정리
 
-작성이 끝나면 [08 이미지 빌드](08-image-build.md)에서 `docker build`/`docker run`으로 실제 빌드·실행해 검증하는 흐름으로 이어짐.
+작성이 끝나면 [06 이미지 빌드](06-image-build.md)에서 `docker build`/`docker run`으로 실제 빌드·실행해 검증하는 흐름으로 이어짐.
