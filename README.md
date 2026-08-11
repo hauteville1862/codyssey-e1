@@ -66,7 +66,7 @@ codyssey-e1/
 | 03 | ✅ | Docker 설치·점검 및 기본 운영 명령 | [docs/03-docker.md](docs/03-docker.md) |
 | 04 | ✅ | 컨테이너 실행/관리 | [docs/04-container.md](docs/04-container.md) |
 | 05 | ✅ | 기존 Dockerfile 기반 커스텀 이미지 제작 | [docs/05-dockerfile.md](docs/05-dockerfile.md) |
-| 06 | ⬜ | 기존 Dockerfile 기반 커스텀 이미지 빌드 | [docs/06-image-build.md](docs/06-image-build.md) |
+| 06 | ✅ | 기존 Dockerfile 기반 커스텀 이미지 빌드 | [docs/06-image-build.md](docs/06-image-build.md) |
 | 07 | ⬜ | 포트 매핑 및 브라우저 접속 증거 | [docs/07-port.md](docs/07-port.md) |
 | 08 | ⬜ | 커스텀 이미지 삭제 및 정리 | [docs/08-cleanup.md](docs/08-cleanup.md) |
 | 09 | ⬜ | 바인드 마운트 반영 + Docker 볼륨 영속성 증거 | [docs/09-volume.md](docs/09-volume.md) |

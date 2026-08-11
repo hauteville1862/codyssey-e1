@@ -10,8 +10,7 @@
 | `docker ps` | 컨테이너가 정상적으로 실행 중인지 확인 |
 
 ### 6-1. 이미지 빌드
-`docker build -t 이미지이름
-경로`: Dockerfile을 기반으로 이미지를 빌드하는 명령어
+`docker build -t 이미지이름[:태그] 경로`: Dockerfile을 기반으로 이미지를 빌드하는 명령어
 ```bash
 yuhyun_lim@DESKTOP-1KO5JJM:/mnt/c/Users/Yuhyun Lim/codyssey-e1$ cd app
 ```
@@ -55,6 +54,8 @@ $ docker run -d -p 8080:80 --name codyssey-e1-web-container codyssey-e1-web
 ```
 - 실행 성공 후 `docker ps`로 컨테이너가 `Up` 상태인지 확인
 ```bash
-(여기에 docker ps 실행 결과를 붙여넣어 주세요)
+$ docker ps
+CONTAINER ID   IMAGE             COMMAND                  CREATED          STATUS          PORTS                                     NAMES
+93b2ca033581   codyssey-e1-web   "/docker-entrypoint.…"   17 seconds ago   Up 15 seconds   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   codyssey-e1-web-container
 ```
 > 포트 매핑 옵션(`-p`)과 브라우저 접속 증거는 [07 포트 매핑](07-port.md)에서 다룸. 테스트가 끝난 뒤 컨테이너/이미지 정리는 [08 커스텀 이미지 삭제 및 정리](08-cleanup.md)에서 다룸
