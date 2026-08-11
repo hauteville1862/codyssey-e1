@@ -77,7 +77,7 @@ da29ea083a34ee0ef7354f0a296b283d5ca89108bcc04a9fa304ce3c5b20ad2a
 ```
 > attach/exec를 실습하려면 컨테이너가 계속 살아있어야 함.
 
-> 백그라운드 실행과 attach/exec의 관계에 대한 보충 설명은 [04 보충 노트](04-note-background.md) 참고
+> 백그라운드 실행과 attach/exec의 관계에 대한 보충 설명은 [00 개념 노트](00-concepts.md#백그라운드-실행과-attachexec) 참고
 
 ### 4-5. 컨테이너 종료/유지 차이 (attach / exec)
 `docker exec -it 컨테이너 명령`: 실행 중인 컨테이너 안에서 별도의 새 프로세스를 실행하는 명령어. 나가도 메인 프로세스는 그대로 남아있어 컨테이너가 계속 유지됨
