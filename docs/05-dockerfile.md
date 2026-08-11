@@ -31,7 +31,7 @@
 - 미션 요구사항 (A)안("웹 서버 베이스 이미지 + 정적 콘텐츠·설정 교체")에 부합
   미션 예시의 Dockerfile도 동일하게 `FROM nginx:alpine`을 사용함
 - alpine 계열이라 이미지 용량이 작아 pull/build 속도가 빠름
-> 08번(이미지 빌드)에서  반복적으로 build/run을 시연하기에 부담이 적음
+  (참고: 08번(이미지 빌드)에서 반복적으로 build/run을 시연하기에 부담이 적음)
 - 정적 콘텐츠(`site/` 등)를 `/usr/share/nginx/html/`로 COPY하는 것만으로 커스텀 포인트가 명확하게 드러남
 ```
 > [00 개념 노트 - nginx:alpine을 베이스 이미지로 선택한 이유](00-concepts.md#nginxalpine을-베이스-이미지로-선택한-이유) 참고
