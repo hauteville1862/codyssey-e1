@@ -13,6 +13,10 @@
 ```
 codyssey-e1/
 ├── README.md              # 프로젝트 개요·진행 상황 요약
+├── app/                    # Dockerfile 기반 커스텀 이미지 소스 (nginx:alpine + 정적 콘텐츠)
+│   ├── Dockerfile
+│   └── site/
+│       └── index.html
 ├── codyssey/               # 미션 원본 지시문, 평가 기준 문서
 │   ├── 미션.md
 │   └── 평가기준.md
