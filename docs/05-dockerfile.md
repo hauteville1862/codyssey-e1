@@ -42,23 +42,14 @@
 > [00 개념 노트 - nginx:alpine을 베이스 이미지로 선택한 이유](00-concepts.md#nginxalpine을-베이스-이미지로-선택한-이유) 참고
 
 ### 5-2. Dockerfile 작성
-`Dockerfile`: 이미지를 어떻게 만들지 순서대로 적어둔 빌드 스크립트(텍스트 파일)
+- Dockerfile: 이미지를 어떻게 만들지 순서대로 적어둔 빌드 스크립트 (텍스트 파일)
 
-실제 파일: [app/Dockerfile](../app/Dockerfile), [app/site/index.html](../app/site/index.html)
+- 실제 파일
+    - [app/Dockerfile](../app/Dockerfile)
+    - [app/site/index.html](../app/site/index.html)
 
 ```dockerfile
-FROM nginx:alpine
-
-LABEL org.opencontainers.image.title="my-custom-nginx"
-LABEL org.opencontainers.image.description="codyssey-e1 mission 05"
-
-ENV APP_ENV=production
-
-WORKDIR /usr/share/nginx/html
-
-COPY site/ .
-
-EXPOSE 80
+(여기에 작성한 Dockerfile 전체 내용을 붙여넣어 주세요)
 ```
 
 - `app/site/index.html`: nginx 기본 페이지 대신 서빙할 정적 콘텐츠. `COPY site/ .`로 `WORKDIR`(=`/usr/share/nginx/html`)에 그대로 복사됨
