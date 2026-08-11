@@ -29,7 +29,10 @@ drwxr-xr-x  2 hauteville18620603  hauteville18620603  64  8  8 13:26 folder
 
 ### 1-4. 디렉토리 이동
 `cd 경로`: 현재 작업 중인 디렉토리를 지정한 경로로 이동(변경)하는 명령어
-
+```bash
+yuhyun_lim@DESKTOP-1KO5JJM:/mnt/c/Users/Yuhyun Lim/codyssey-e1$ cd folder
+yuhyun_lim@DESKTOP-1KO5JJM:/mnt/c/Users/Yuhyun Lim/codyssey-e1/folder$ 
+```
 `cd ..`: 한 단계 상위 디렉토리로 이동하는 명령어
 ```bash
 (여기에 cd 실행 결과를 붙여넣어 주세요)
@@ -46,16 +49,44 @@ drwxr-xr-x  2 hauteville18620603  hauteville18620603  64  8  8 13:26 folder
 `cp`: 파일을 복사하는 명령어
 
 `cp -r`: 폴더(디렉토리)를 하위 내용까지 재귀적으로 `-r` 복사하는 명령어
+
+`cp`는 목적지 경로가 이미 존재하는지, 존재한다면 파일인지 디렉토리인지에 따라 결과가 달라짐. 아래처럼 경우를 나눠서 확인함.
+
+**1) 파일 → 존재하지 않는 이름으로 복사**: 지정한 이름의 새 파일이 생성됨(사실상 "복사 후 이름 변경")
 ```bash
 $ cp file file_copy
 $ ls -al file file_copy
 -rw-r--r-- 1 Yuhyun Lim 197121 0 Aug  9 22:12 file
 -rw-r--r-- 1 Yuhyun Lim 197121 0 Aug  9 22:12 file_copy
+```
 
+**2) 파일 → 이미 존재하는 디렉토리로 복사**: 목적지 경로 끝을 디렉토리로 지정하면, 그 디렉토리 안에 원본과 같은 이름으로 복사됨
+```bash
+$ cp file folder
+$ ls -al folder
+-rw-r--r-- 1 Yuhyun Lim 197121 0 Aug  9 22:12 file
+```
+> `cp file folder/file_copy`처럼 목적지에 새 이름까지 지정하면 디렉토리 안에서 이름도 바꿔 복사할 수 있음
+
+**3) 폴더 → 존재하지 않는 이름으로 복사 (`-r` 필요)**: 원본 폴더가 그대로 새 이름으로 복사됨 (내용물이 목적지 폴더 바로 아래에 위치)
+```bash
 $ cp -r folder folder_copy
 $ ls -ald folder folder_copy
 drwxr-xr-x 1 Yuhyun Lim 197121 0 Aug  9 22:12 folder
 drwxr-xr-x 1 Yuhyun Lim 197121 0 Aug  9 22:12 folder_copy
+```
+
+**4) 폴더 → 이미 존재하는 디렉토리로 복사 (`-r` 필요)**: 원본 폴더 이름 그대로 목적지 디렉토리의 하위 폴더로 복사됨 (한 단계 더 들어감에 주의). 3번 실행 직후라 `folder_copy`가 이미 디렉토리로 존재하는 상태에서 같은 명령을 한 번 더 실행하면 이 경우가 됨
+```bash
+$ cp -r folder folder_copy
+$ ls -ald folder_copy/folder
+drwxr-xr-x 1 Yuhyun Lim 197121 0 Aug  9 22:12 folder_copy/folder
+```
+
+**5) 폴더를 `-r` 없이 복사 시도**: 디렉토리는 그냥 복사되지 않고 에러가 발생함
+```bash
+$ cp folder folder_copy2
+cp: -r not specified; omitting directory 'folder'
 ```
 
 ### 1-7. 파일 & 폴더 삭제
