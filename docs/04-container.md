@@ -82,11 +82,24 @@ da29ea083a34ee0ef7354f0a296b283d5ca89108bcc04a9fa304ce3c5b20ad2a
 ### 4-5. 컨테이너 종료/유지 차이 (attach / exec)
 `docker exec -it 컨테이너 명령`: 실행 중인 컨테이너 안에서 별도의 새 프로세스를 실행하는 명령어. 나가도 메인 프로세스는 그대로 남아있어 컨테이너가 계속 유지됨
 ```bash
-(여기에 attach와 exec 각각 진입/종료 시 컨테이너 상태 비교 결과를 붙여넣어 주세요)
+$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS          PORTS     NAMES
+c098e8b5472d   ubuntu    "bash"    47 minutes ago   Up 47 minutes             my-container
+yuhyun_lim@DESKTOP-1KO5JJM:/mnt/c/Users/Yuhyun Lim/codyssey-e1$ docker exec -it my-container bash
+root@c098e8b5472d:/# exit
+exit
 ```
 `docker attach 컨테이너`: 실행 중인 컨테이너의 메인 프로세스(PID 1)에 그대로 연결하는 명령어. 여기서 나가면(exit) 메인 프로세스가 끝나 컨테이너도 함께 종료될 수 있음
 ```bash
-(여기에 attach와 exec 각각 진입/종료 시 컨테이너 상태 비교 결과를 붙여넣어 주세요)
+$ docker attach my-container
+root@c098e8b5472d:/# exit
+exit
+yuhyun_lim@DESKTOP-1KO5JJM:/mnt/c/Users/Yuhyun Lim/codyssey-e1$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+yuhyun_lim@DESKTOP-1KO5JJM:/mnt/c/Users/Yuhyun Lim/codyssey-e1$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS                      PORTS     NAMES
+c098e8b5472d   ubuntu    "bash"        51 minutes ago   Exited (0) 19 seconds ago             my-container
+2d2ff1dc3ccb   ubuntu    "/bin/bash"   2 hours ago      Exited (0) 2 hours ago                awesome_babbage
 ```
 
 ### 4-6. 컨테이너를 이미지로 저장 (docker commit)
