@@ -10,6 +10,23 @@
 
 Dockerfile을 `docker build`로 빌드하면 이미지가 만들어지고, 이미지를 `docker run`으로 실행하면 컨테이너가 되며, 컨테이너 안에서의 변경은 `docker commit` 없이는 이미지에 반영되지 않음
 
+## 명령어 요약
+
+| 명령어 | 설명 |
+| --- | --- |
+| `docker --version` | 설치된 Docker 클라이언트 버전 출력 |
+| `docker info` | Docker 데몬 상태 및 시스템 정보 출력 |
+| `docker pull 이미지명` | 레지스트리에서 이미지 다운로드 |
+| `docker images` | 로컬에 저장된 이미지 목록 출력 |
+| `docker run 이미지명` | 이미지를 컨테이너로 실행 |
+| `docker ps` | 실행 중인 컨테이너 목록 출력 |
+| `docker ps -a` | 중지된 컨테이너까지 포함한 전체 목록 출력 |
+| `docker stop 컨테이너` | 실행 중인 컨테이너 중지 |
+| `docker logs 컨테이너` | 컨테이너의 표준 출력·에러 로그 확인 |
+| `docker stats` | 컨테이너의 CPU·메모리 등 리소스 사용량 실시간 확인 |
+| `docker rm 컨테이너` | 중지된 컨테이너 삭제 |
+| `docker rmi 이미지` | 사용하지 않는 이미지 삭제 |
+
 ### 3-1. Docker 버전 확인
 `docker --version`: 설치된 Docker 클라이언트 버전을 출력하는 명령어
 ```bash
