@@ -39,7 +39,7 @@
 > 08번(이미지 빌드)에서  반복적으로 build/run을 시연하기에 부담이 적음
 - 정적 콘텐츠(`site/` 등)를 `/usr/share/nginx/html/`로 COPY하는 것만으로 커스텀 포인트가 명확하게 드러남
 ```
-> alpine 계열의 용량이 작은 이유, COPY 한 줄만으로 커스텀 포인트가 드러나는 이유에 대한 상세 설명은 [00 개념 노트 - nginx:alpine을 베이스 이미지로 선택한 이유](00-concepts.md#nginxalpine을-베이스-이미지로-선택한-이유) 참고
+> [00 개념 노트 - nginx:alpine을 베이스 이미지로 선택한 이유](00-concepts.md#nginxalpine을-베이스-이미지로-선택한-이유) 참고
 
 ### 5-2. Dockerfile 작성
 `Dockerfile`: 이미지를 어떻게 만들지 순서대로 적어둔 빌드 스크립트(텍스트 파일)
