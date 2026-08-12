@@ -82,5 +82,5 @@ codyssey-e1/
 
 ## VI. 트러블슈팅
 
-- [문제 1 - 스크린샷을 첨부했을 때 이미지가 제대로 보이지 않음](troubleshooting/screenshot-error.md)
-- 문제 2 - [진행 중]
+- [문제 1 - 스크린샷을 첨부했을 때 이미지가 제대로 보이지 않음](troubleshooting/screenshot-error.md#문제-1---스크린샷을-첨부했을-때-이미지가-제대로-보이지-않는-오류-해결)
+- [문제 2 - 컨테이너 내부에서 docker 명령 실행 시 "command not found" 오류](troubleshooting/screenshot-error.md#문제-2---컨테이너-내부에서-docker-명령-실행-시-command-not-found-오류)
