@@ -430,13 +430,39 @@ Deleted: sha256:8541484afbc9c8a5a8a99b379568ebbc957f658583ec9448fc43104229c03cf8
 `docker commit 컨테이너 이미지이름[:태그]`: 컨테이너의 현재 상태(파일 변경 등)를 새 이미지로 저장하는 명령어
 ```bash
 $ docker run -it ubuntu bash
-root@a1c2e4f6b8d0:/# apt-get update
-root@a1c2e4f6b8d0:/# exit
-$ docker commit a1c2e4f6b8d0 my-ubuntu:latest
-sha256:...
+root@59f57aed6a25:/# docker commit
+bash: docker: command not found
+root@59f57aed6a25:/# docker ps     
+bash: docker: command not found
+root@59f57aed6a25:/# apt-get update
+Get:1 http://archive.ubuntu.com/ubuntu resolute InRelease [136 kB]                                     
+Get:2 http://security.ubuntu.com/ubuntu resolute-security InRelease [137 kB]
+Get:3 http://archive.ubuntu.com/ubuntu resolute-updates InRelease [137 kB]
+Get:4 http://security.ubuntu.com/ubuntu resolute-security/restricted amd64 Packages [397 kB]
+Get:5 http://archive.ubuntu.com/ubuntu resolute-backports InRelease [136 kB]
+Get:6 http://archive.ubuntu.com/ubuntu resolute/multiverse amd64 Packages [352 kB]
+Get:7 http://archive.ubuntu.com/ubuntu resolute/main amd64 Packages [1874 kB]  
+Get:8 http://security.ubuntu.com/ubuntu resolute-security/main amd64 Packages [462 kB]
+Get:9 http://security.ubuntu.com/ubuntu resolute-security/universe amd64 Packages [190 kB]              
+Get:10 http://security.ubuntu.com/ubuntu resolute-security/multiverse amd64 Packages [11.2 kB]          
+Get:11 http://archive.ubuntu.com/ubuntu resolute/universe amd64 Packages [20.1 MB]                      
+Get:12 http://archive.ubuntu.com/ubuntu resolute/restricted amd64 Packages [189 kB]                     
+Get:13 http://archive.ubuntu.com/ubuntu resolute-updates/multiverse amd64 Packages [14.3 kB]            
+Get:14 http://archive.ubuntu.com/ubuntu resolute-updates/restricted amd64 Packages [412 kB]             
+Get:15 http://archive.ubuntu.com/ubuntu resolute-updates/universe amd64 Packages [297 kB]               
+Get:16 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 Packages [561 kB]                   
+Get:17 http://archive.ubuntu.com/ubuntu resolute-backports/universe amd64 Packages [567 B]              
+Fetched 25.4 MB in 15s (1648 kB/s)                            
+Reading package lists... Done
+root@59f57aed6a25:/# exit
+exit
+$ docker commit 59f57aed6a25
+sha256:7a15949a5cea04ae8c523917eb9b9e714827a6ddbeae548fb3feac5adc58bf15
 $ docker images
-REPOSITORY   TAG      IMAGE ID       CREATED         SIZE
-my-ubuntu    latest   xxxxxxxxxxxx   5 seconds ago   ...MB
-ubuntu       latest   678c6550cc43   ...             160MB
+                                                                                     i Info →   U  In Use
+IMAGE                    ID             DISK USAGE   CONTENT SIZE   EXTRA
+codyssey-e1-web:latest   609140e712e6       92.7MB         26.1MB    U   
+ubuntu:latest            678c6550cc43        160MB         45.3MB    U 
 ```
-> `docker commit` 뒤에는 컨테이너 ID/이름과, 붙이고 싶은 `저장소이름:태그`를 순서대로 지정함 (태그를 생략하면 `latest`가 기본값). 이미지는 불변이지만, 컨테이너 안에서 변경한 내용을 `commit`으로 캡처해야 새 이미지에 반영됨
+> `docker: command not found`는 예상된 결과 — `docker commit`/`docker ps`는 호스트에서 실행하는 명령이지, 컨테이너 내부에 docker CLI가 설치되어 있는 건 아님. 그래서 컨테이너 안에서는 `apt-get update`로 실제 "변경 사항"만 만들고 `exit`으로 나온 뒤, 호스트 프롬프트(`$`)로 돌아와서 `docker commit`을 실행함
+> 이번엔 `docker commit 59f57aed6a25`처럼 **이미지 이름을 생략**하고 실행함 → `저장소:태그` 없이 `sha256:7a15949a5cea...` ID만 가진 이미지가 생성됨. 그런데 바로 아래 `docker images` 목록엔 기존 `codyssey-e1-web`, `ubuntu` 두 개만 보이고 방금 커밋한 이미지가 안 보임 — 정상적으로 커밋됐다면 이름 없는(`<none>`) 이미지로라도 목록에 잡혀야 하니, 출력이 잘렸거나 다른 터미널/시점의 `docker images` 결과가 섞였을 가능성이 있음. `docker images`를 다시 실행해서 방금 커밋한 이미지가 실제로 목록에 뜨는지 확인 필요

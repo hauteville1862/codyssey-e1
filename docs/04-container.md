@@ -61,7 +61,7 @@ Hello
 root@969bb9ddff00:/# exit
 exit
 ```
-`docker run -it --name 이름 이미지 bash`: 컨테이너에 이름을 지정할 수 있음 
+`docker run -it --name 이름 이미지 bash`: 컨테이너에 이름을 지정할 수 있음
 ```bash
 $ docker run -it --name my-container ubuntu bash
 root@39f1021873e3:/# exit    
@@ -70,7 +70,7 @@ exit
 > 지정하지 않으면 Docker가 무작위 이름을 자동으로 붙임
 
 ### 4-4. 컨테이너 백그라운드 실행
-`docker run -d 이미지`: 컨테이너를 백그라운드(detached)로 실행하고 터미널 제어권은 바로 돌려주는 명령어. 
+`docker run -d 이미지`: 컨테이너를 백그라운드(detached)로 실행하고 터미널 제어권은 바로 돌려주는 명령어.
 ```bash
 $ docker run -dit --name my-container ubuntu bash
 da29ea083a34ee0ef7354f0a296b283d5ca89108bcc04a9fa304ce3c5b20ad2a
