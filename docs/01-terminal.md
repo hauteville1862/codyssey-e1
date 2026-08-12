@@ -89,17 +89,16 @@ cp: -r not specified; omitting directory 'folder'
 
 ### 1-7. 파일 & 폴더 삭제
 `rm`: 파일을 삭제하는 명령어
-
-`rm -r`: 폴더(디렉토리)와 그 안의 내용을 모두 삭제하는 명령어
-
-`rmdir`: 비어 있는 폴더만 삭제하는 명령어
 ```bash
 % rm file
 % ls -al
 total 0
 drwxr-xr-x  2 hauteville18620603  hauteville18620603   64  8  2 16:14 .
 drwxr-xr-x  5 hauteville18620603  hauteville18620603  160  8  2 16:11 ..
+```
 
+`rm -r`: 폴더(디렉토리)와 그 안의 내용을 모두 삭제하는 명령어
+```bash
 % rm -r folder
 % ls -al
 total 8
@@ -109,4 +108,9 @@ drwxr-xr-x  12 hauteville18620603  hauteville18620603  384  8  2 16:02 .git
 -rw-r--r--   1 hauteville18620603  hauteville18620603  640  8  2 16:02 README.md
 ```
 
-(여기에 rmdir 실행 결과를 붙여넣어 주세요)
+### 1-8. 파일 내용 확인
+`cat 파일명`: 파일의 내용을 화면에 그대로 출력하는 명령어
+```bash
+(여기에 cat 실행 결과를 붙여넣어 주세요)
+```
+
