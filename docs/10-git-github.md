@@ -86,8 +86,14 @@ origin  https://github.com/hauteville1862/codyssey-e1.git (push)
 ### 10-6. 연동 증거 (푸시 성공 확인)
 `git push -u origin main`: 로컬 커밋을 원격 저장소에 업로드하는 명령어
 ```bash
-(여기에 git push 실행 결과를 붙여넣어 주세요 - 이 문서를 커밋한 뒤 실행하면 실제 업로드 로그가 남습니다)
+$ git push -u origin main
+To https://github.com/hauteville1862/codyssey-e1.git
+   176b5e1..017ba7f  main -> main
+branch 'main' set up to track 'origin/main'.
 ```
+- `176b5e1..017ba7f` — 원격 저장소가 이전 커밋에서 새 커밋까지 갱신됐다는 의미
+- `main -> main` — 로컬 `main` 브랜치의 내용을 원격 `main` 브랜치로 보냈다는 의미
+- 마지막 줄은 `-u` 옵션의 결과로, 이후에는 `git push`만 입력해도 `origin main`으로 전송됨
 ```
 (여기에 GitHub 저장소 웹 화면 스크린샷을 붙여넣어 주세요 - 주소창과 최신 커밋/브랜치가 함께 보이도록)
 ```
