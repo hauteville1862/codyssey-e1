@@ -73,7 +73,7 @@ codyssey-e1/
 | 10 | 🔶 | Git 사용자 정보·기본 브랜치 설정 및 GitHub/VSCode 연동 | [docs/10-git-github.md](docs/10-git-github.md) |
 
 > ✅ 완료 / 🔶 진행 중 / ⬜ 미착수
-> 10번은 Git 설정·원격 연동·푸시까지 완료했고, VSCode GitHub 로그인 화면과 GitHub 웹 화면 스크린샷 첨부가 남아 있음
+> 10번은 Git 설정·원격 연동·푸시까지 완료했고, VSCode GitHub 로그인 화면 스크린샷 첨부가 남아 있음
 
 ## V. 심층 인터뷰
 
