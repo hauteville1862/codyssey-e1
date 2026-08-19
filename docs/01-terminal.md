@@ -111,6 +111,59 @@ drwxr-xr-x  12 hauteville18620603  hauteville18620603  384  8  2 16:02 .git
 ### 1-8. 파일 내용 확인
 `cat 파일명`: 파일의 내용을 화면에 그대로 출력하는 명령어
 ```bash
-(여기에 cat 실행 결과를 붙여넣어 주세요)
+$ printf 'hello codyssey\nsecond line\n' > note.txt
+$ cat note.txt
+hello codyssey
+second line
 ```
+- 파일 이름을 여러 개 이어서 쓰면 내용을 순서대로 이어붙여 출력함 (`cat`이라는 이름 자체가 concatenate = 이어붙이기에서 유래)
+```bash
+$ printf 'third file line\n' > memo.txt
+$ cat note.txt memo.txt
+hello codyssey
+second line
+third file line
+```
+> `cat`은 내용을 한 번에 전부 쏟아내므로 짧은 파일 확인에 적합함. 파일이 길면 `less 파일명`(스크롤 가능), `head`/`tail`(앞/뒤 일부만) 같은 명령을 쓰는 편이 낫다
+
+### 1-9. 절대 경로와 상대 경로
+경로를 지정하는 방식은 두 가지이며, 같은 파일을 가리켜도 표현이 달라진다.
+
+| 구분 | 형태 | 기준점 |
+| --- | --- | --- |
+| 절대 경로 | `/`(리눅스·macOS) 또는 `C:/`(Windows)로 시작 | 파일시스템의 최상위(루트). 현재 위치와 무관하게 항상 같은 곳 |
+| 상대 경로 | `note.txt`, `./site`, `../docs`처럼 `/`로 시작하지 않음 | **현재 작업 디렉토리(`pwd`)**. 어디서 실행하느냐에 따라 가리키는 대상이 달라짐 |
+
+`pwd`로 현재 위치를 확인한 뒤, 같은 파일을 두 방식으로 읽어 비교
+```bash
+$ pwd
+/c/Users/Yuhyun Lim/codyssey-e1/practice
+
+$ cat note.txt                                          # 상대 경로
+hello codyssey
+second line
+
+$ cat "/c/Users/Yuhyun Lim/codyssey-e1/practice/note.txt"   # 절대 경로
+hello codyssey
+second line
+```
+같은 상대 경로라도 **다른 디렉토리에서 실행하면 실패**한다 — 상대 경로가 현재 위치를 기준으로 해석된다는 증거
+```bash
+$ cd /
+$ cat note.txt
+cat: note.txt: No such file or directory
+```
+
+**어떤 상황에 무엇을 쓰는가**
+
+| 상황 | 선택 | 이유 |
+| --- | --- | --- |
+| 터미널에서 바로 옆 파일을 다룰 때 | 상대 경로 | 짧고 빠름. 현재 위치가 명확한 상태라 실수 여지가 적음 |
+| Dockerfile의 `COPY site/ .` | 상대 경로 | Dockerfile 기준으로 해석되므로, 프로젝트를 다른 PC의 다른 위치에 복제해도 그대로 동작 → **재현성** |
+| `docker run -v <호스트경로>:...` ([09번](09-volume.md#9-1-바인드-마운트로-컨테이너-실행)) | 절대 경로 | Docker 데몬은 내 터미널의 현재 위치를 모름. 상대 경로를 주면 볼륨 이름으로 오해하거나 엉뚱한 곳을 가리킴 |
+| cron·스크립트 등 실행 위치를 보장할 수 없을 때 | 절대 경로 | 어디서 실행되든 같은 대상을 가리켜야 하므로 |
+
+> 핵심 기준: **"이 명령을 실행하는 위치가 항상 같다고 보장할 수 있는가?"** 보장되면 상대 경로가 편하고, 보장되지 않으면(다른 프로그램이 대신 실행, 위치가 바뀔 수 있음) 절대 경로가 안전하다.
+
+> 실습에 사용한 `practice/` 디렉토리와 `note.txt`, `memo.txt`는 확인 후 `rm -r practice`로 정리함
 
