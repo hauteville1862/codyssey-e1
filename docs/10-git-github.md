@@ -68,10 +68,13 @@ branch.main.merge=refs/heads/main
 
 ### 10-4. VSCode에서 GitHub 로그인
 VSCode 좌측 하단 계정 아이콘(또는 명령 팔레트 `Sign in to GitHub`)을 통해 GitHub 계정 로그인
-```
-(여기에 VSCode GitHub 로그인 완료 화면 스크린샷을 붙여넣어 주세요 - img/ 에 저장 후 ![...](../img/파일명.png) 형식으로 링크)
-```
-> 캡처 시 주의: 토큰 입력창이나 인증 코드가 보이는 상태로 캡처하지 말 것. 로그인이 **완료된** 화면(계정 아이콘에 GitHub 계정명이 표시된 상태)을 캡처
+
+![VSCode GitHub 로그인 완료 화면](../img/vscode-github-login.png)
+
+- 계정 메뉴에 `hauteville1862 (GitHub)` 계정이 표시됨 — VSCode가 GitHub 계정으로 로그인된 상태
+- 하위 메뉴에 `로그아웃` 항목이 있는 것이 현재 로그인되어 있다는 증거
+
+> 캡처 시 주의: 토큰 입력창이나 인증 코드가 보이는 상태로 캡처하지 말 것. 로그인이 **완료된** 화면만 캡처
 
 ### 10-5. 로컬 저장소와 GitHub 원격 저장소 연동
 `git remote -v`: 로컬 저장소에 연결된 원격 저장소의 이름과 주소를 확인하는 명령어

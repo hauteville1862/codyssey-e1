@@ -70,10 +70,9 @@ codyssey-e1/
 | 07 | ✅ | 포트 매핑 및 브라우저 접속 증거 | [docs/07-port.md](docs/07-port.md) |
 | 08 | ✅ | 커스텀 이미지 삭제 및 정리 | [docs/08-cleanup.md](docs/08-cleanup.md) |
 | 09 | ⬜ | 바인드 마운트 반영 + Docker 볼륨 영속성 증거 | [docs/09-volume.md](docs/09-volume.md) |
-| 10 | 🔶 | Git 사용자 정보·기본 브랜치 설정 및 GitHub/VSCode 연동 | [docs/10-git-github.md](docs/10-git-github.md) |
+| 10 | ✅ | Git 사용자 정보·기본 브랜치 설정 및 GitHub/VSCode 연동 | [docs/10-git-github.md](docs/10-git-github.md) |
 
 > ✅ 완료 / 🔶 진행 중 / ⬜ 미착수
-> 10번은 Git 설정·원격 연동·푸시까지 완료했고, VSCode GitHub 로그인 화면 스크린샷 첨부가 남아 있음
 
 ## V. 심층 인터뷰
 
