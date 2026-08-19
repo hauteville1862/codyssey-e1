@@ -29,6 +29,7 @@
   <h1>내 컴퓨터에 개발자용 '작업실' 꾸미기</h1>
   <p>이 페이지는 nginx 기본 웰컴 페이지가 아닌, <code>Dockerfile</code>의 <code>COPY site/ .</code> 지시어로 이미지에 복사된 정적 콘텐츠입니다.</p>
   <p>베이스 이미지 <code>nginx:alpine</code> 위에 이 <code>site/</code> 디렉토리 내용만 교체한 것이 이번 미션의 커스텀 포인트입니다.</p>
+  <p><strong>바인드 마운트 반영 테스트</strong>: 이 문단은 컨테이너를 재시작하거나 이미지를 다시 빌드하지 않고, 호스트의 <code>app/site/index.html</code>을 수정한 것만으로 추가되었습니다.</p>
   <footer>codyssey-e1 · hauteville1862</footer>
 </body>
 </html>
