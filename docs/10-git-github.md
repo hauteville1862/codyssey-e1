@@ -19,12 +19,12 @@
 `git config --global user.name`, `git config --global user.email`: 커밋마다 작성자로 기록될 이름/이메일을 설정하는 명령어. `--global`은 이 PC 전체에 적용한다는 뜻
 - 설정 명령은 성공해도 아무것도 출력하지 않으므로, 값을 다시 조회해서 확인
 ```bash
-$ git config --global user.name "hauteville1862"
-$ git config --global user.email "161007232+hauteville1862@users.noreply.github.com"
+$ git config --global user.name "**********"
+$ git config --global user.email "***********@users.noreply.github.com"
 $ git config --global user.name
 hauteville1862
 $ git config --global user.email
-161007232+hauteville1862@users.noreply.github.com
+************.noreply.github.com
 ```
 > 이메일은 GitHub이 제공하는 `noreply` 주소를 사용. 실제 개인 이메일이 커밋 기록에 영구히 남아 공개되는 것을 막기 위함
 
@@ -43,8 +43,8 @@ main
 $ git config --list
 ...
 core.autocrlf=true
-user.name=hauteville1862
-user.email=161007232+hauteville1862@users.noreply.github.com
+user.name=***********
+user.email=123456***********@users.noreply.github.com
 init.defaultbranch=main
 core.repositoryformatversion=0
 core.filemode=false
